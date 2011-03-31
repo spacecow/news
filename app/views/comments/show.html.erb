@@ -1,0 +1,16 @@
+<% title "Comment" %>
+
+<p>
+  <strong><%= t('formtastic.labels.content') %>:</strong>
+  <%= @comment.content %>
+</p>
+
+<div id="bottom_links">
+  <% if can? :edit, @comment %>
+    <%= link_to t(:edit), edit_comment_path(@comment) %> |
+  <% end %>
+  <% if can? :delete, @comment %>
+    <%= link_to t(:delete), @comment, :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
+  <%= link_to view(:comment), comments_path if can? :index, Comment %>
+</div>

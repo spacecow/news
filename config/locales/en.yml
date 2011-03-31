@@ -1,5 +1,35 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  admin: "Admin"
+  del: "Del"
+  delete: "Delete"
+  edit: "Edit"
+  log_in: "Log in"
+  log_out: "Log out"
+  member: "Member"
+  mini_admin: "mini-admin"
+  or: " or "
+  possessive: "%{owner}'s %{obj}"
+  role: "Role"
+  show: "Show"
+  sign_up: "Sign up"
+  label:
+    add: "Add %{obj}"
+    create: "Create %{obj}"
+    edit: "Edit %{obj}"
+    list: "List %{obj}"
+    new: "New %{obj}"
+    remove: "Remove %{obj}"
+    show: "Show %{obj}"
+    update: "Update %{obj}"
+    view: "View %{obj}"
+  message:
+    not_you?: "Not you?"
+    sure?: "Are you sure?"
+    welcome: "Welcome %{user}."
+  success:
+    created: "Successfully created %{obj}."
+    deleted: "Successfully deleted %{obj}."
+    updated: "Successfully updated %{obj}."  
+  formtastic:
+    labels:
+      name: "Name"

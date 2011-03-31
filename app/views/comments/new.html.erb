@@ -1,0 +1,8 @@
+<% title new(:comment) %>
+
+<%= render 'form' %>
+
+<div id="bottom_links">
+  <%= link_to view(:comment),
+  comments_path if can? :index, @Comment %>
+</div>

@@ -1,0 +1,20 @@
+<% title pl(:comment) %>
+
+<table>
+  <tr>
+    <th><%= t('formtastic.labels.content') %></th>
+  </tr>
+  <% for comment in @comments %>
+    <tr>
+      <td><%= comment.content %></td>
+      <td><%= link_to t(:show), comment if can? :show, comment %></td>
+      <td><%= link_to t(:edit), edit_comment_path(comment) if can? :edit, comment %></td>
+      <td><%= link_to t(:del), comment, :confirm => sure?, :method => :delete if can? :destroy, comment %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="bottom_links">
+  <%= link_to new(:comment),
+  new_comment_path if can? :new, Comment %>
+</div>

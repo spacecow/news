@@ -1,0 +1,10 @@
+<% title edit(:comment) %>
+
+<%= render 'form' %>
+
+<div id="bottom_links">
+  <% if can? :show, @comment -%>
+    <%= link_to t(:show), @comment %> |
+  <% end %>
+  <%= link_to view(:comment), comments_path if can? :index, Comment %>
+</div>

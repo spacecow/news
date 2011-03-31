@@ -1,0 +1,7 @@
+<%= semantic_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.submit (@user.new_record? ? t(:sign_up) : t(:update)), :class => :submit %>
+<% end %>
