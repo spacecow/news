@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :username, :email, :password, :password_confirmation
-
   attr_accessor :password
   before_create :set_role
   before_save :prepare_password
+
+  has_many :comments
 
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true

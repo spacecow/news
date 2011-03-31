@@ -32,4 +32,8 @@ en:
     updated: "Successfully updated %{obj}."  
   formtastic:
     labels:
+      content: "Content"
       name: "Name"
+
+  comment: "Comment"
+  own_comment: "Own comment"

@@ -14,5 +14,5 @@ Riecnews::Application.routes.draw do
     end
   end
 
-  root :to => "comments#index"
+  root :to => "comments#new"
 end

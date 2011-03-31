@@ -1,0 +1,3 @@
+--- 
+"720172": !ruby/object:Dooby::Task 
+  todo: a member can only see his own comments on the index page

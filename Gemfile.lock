@@ -87,8 +87,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mocha (0.9.11)
-      rake
     mysql2 (0.2.6)
     nokogiri (1.4.4)
     pickle (0.4.4)
@@ -159,7 +157,6 @@ DEPENDENCIES
   formtastic
   gherkin
   launchy
-  mocha
   mysql2
   nifty-generators!
   pickle

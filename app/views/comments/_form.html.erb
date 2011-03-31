@@ -1,5 +1,4 @@
 <%= semantic_form_for @comment do |f| %>
-  <%= f.error_messages %>
-  <%= f.input :content %>
-<%= f.submit :class => :submit %>
+  <%= f.input :content, :label => false %>
+  <%= f.submit %>
 <% end %>

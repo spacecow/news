@@ -14,9 +14,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params[:comment])
+    if current_user; @comment = current_user.comments.build(params[:comment])
+    else @comment = Comment.new(params[:comment]) end
     if @comment.save
-      redirect_to @comment, :notice => created(:comment)
+      redirect_to new_comment_path, :notice => created(:comment)
     else
       render :action => 'new'
     end
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
-      redirect_to @comment, :notice  => updated(:comment)
+      redirect_to new_comment_path, :notice  => updated(:comment)
     else
       render :action => 'edit'
     end

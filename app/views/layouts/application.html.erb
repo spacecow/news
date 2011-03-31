@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
-<script type="text/javascript" src="../../navi-j.js"></script>
+<script type="text/javascript" src="navi-j.js"></script>
 <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
 <%= stylesheet_link_tag 'print.css', :media => 'print' %>
 <!--[if lt IE 8]>
@@ -16,11 +16,11 @@
 <%= csrf_meta_tag %>
 <%= yield(:head) %>
 <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-<link rel="stylesheet" href="../css/setssi.css" type="text/css" />
+<link rel="stylesheet" href="/css/setssi.css" type="text/css" />
 </head>
 <body>
 <noscript>JavaScriptを有効にしてご覧下さい。</noscript>
-<div id="container"
+<div id="container">
 
       <!-- <% flash.each do |name, msg| %> -->
       <!--   <%= content_tag :div, msg, :id => "flash_#{name}" %> -->
@@ -36,10 +36,11 @@
       <!--       <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %> -->
       <!--     <% end %> -->
       <!--   </div> -->
-      <!--   <%= content_tag :h1, yield(:title) if show_title? %> -->
-      <!--   <%= yield %> -->
       <!-- </div> -->
 
+<div id="header">
+<p class="language">Japanese Only</p>
+<!-- ヘッダー-->
 <div id="header1">
     <h1><a href="/index-j.shtml"><img id="logo" alt="電気通信研究所" src="/image1/logo2008-j.gif" width="800" height="110" name="logo" /></a></h1>
     
@@ -47,6 +48,7 @@
 <!-- ヘッダー終了-->
 <!--  ヘッダー   -->
 </div>
+
 <div id="mainmain">
 
 <!--サイドメニュー -->
@@ -217,7 +219,7 @@
 <h3>RIEC News 2011.3 No.1 [創刊号]</h3>
 <table >
 <tr>
-<td width="170"><a href="riecnews_no01.pdf" target="_blank"><img src="img/riecnews_no1_150.jpg" alt="" width="150" height="211" class="videojpg"></a></td>
+<td width="170"><a href="riecnews_no01.pdf" target="_blank"><img src="/img/riecnews_no1_150.jpg" alt="" width="150" height="211" class="videojpg"></a></td>
 <td>
 <h4>巻頭言</h4>
 <ul><li>創刊によせて 所長 中沢 正隆</li></ul>
@@ -245,10 +247,32 @@
 </table>
 </div>
 </div>
+
+<a name="unique"></a>
+<div id="unique">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+  <div class="clear"></div>
+  <div id="user_nav">
+    <% if current_user %>
+      <%= t('message.welcome',:user=>current_user.username) %>
+      <%= t('message.not_you?') %>
+      <%= link_to t(:log_out), logout_path %>
+    <% else %>
+      <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+  <div id="main_content">
+    <%= content_tag :h1, yield(:title) if show_title? %>
+    <%= yield %>
+  </div>
 </div>
+</div>
+
 <!--　本文終わり　-->
 <!--フッダー-->
-<br />
 <div id="footer">
 <p>東北大学電気通信研究所</p>
 <p>〒980-8577　仙台市青葉区片平2丁目1-1</p>
@@ -261,3 +285,7 @@
 </div>
 </body>
 </html>
+
+<script>
+  window.location = window.location.href + "#unique";
+</script>
