@@ -16,7 +16,7 @@ end
 group :test do
   # gem 'spork'
   # gem 'cucumber-rails' #rails g cucumber:install --capybara --rspec
-  gem 'capybara'
+  # gem 'capybara'
   # gem 'database_cleaner'
   # gem 'pickle' #rails g pickle --paths --email
   # gem 'launchy'
