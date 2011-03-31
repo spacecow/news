@@ -12,16 +12,16 @@ class Ability
         if user.role?(:member) || user.role?(:mini_admin) || user.role?(:admin)
           can :update, User, :id => user.id
           can :show, User
-          can :show, Comment, :id => user.id
+          can :show, Comment, :user_id => user.id
           can :index, Comment
         end
         if user.role?(:mini_admin) || user.role?(:admin)
           can [:index,:update], User
-          can [:show,:update], Comment
+          can :show, Comment
         end
         if user.role? :admin
           can [:edit_roles, :update_roles, :destroy], User
-          can :destroy, Comment
+          can [:update,:destroy], Comment
         end
       end
     end

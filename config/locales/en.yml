@@ -35,5 +35,6 @@ en:
       content: "Content"
       name: "Name"
 
+  anonymous: "Anonymous"
   comment: "Comment"
   own_comment: "Own comment"

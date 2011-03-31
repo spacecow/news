@@ -2,7 +2,7 @@
 
 <div id="bottom_links">
   <% if can? :index, @Comment %>
-    <%= link_to view(:comment), comments_path %> |
+    <%= link_to view(:comment), comments_path %>
   <% else %>
     <%= link_to view(:own_comment), comments_path %>
   <% end %>

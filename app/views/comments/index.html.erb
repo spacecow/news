@@ -1,16 +1,22 @@
 <% title pl(:comment) %>
 
-<table>
-  <tr>
-    <th><%= t('formtastic.labels.content') %></th>
-  </tr>
+<table id="comments">
   <% for comment in @comments %>
+    <% if can? :show, comment %>
     <tr>
       <td><%= comment.content %></td>
+      <td>
+        <% if comment.user %>
+          <%= comment.user.username %>
+        <% else %>
+          <%= t(:anonymous) %>
+        <% end %>
+      </td>
       <td><%= link_to t(:show), comment if can? :show, comment %></td>
       <td><%= link_to t(:edit), edit_comment_path(comment) if can? :edit, comment %></td>
       <td><%= link_to t(:del), comment, :confirm => sure?, :method => :delete if can? :destroy, comment %></td>
     </tr>
+    <% end %>
   <% end %>
 </table>
 

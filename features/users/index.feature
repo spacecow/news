@@ -5,8 +5,8 @@ Given a user: "lifter" exists with username: "lifter"
 And a user: "dover" exists with username: "dover", roles_mask: 2
 And I am logged in as "dover"
 When I go to the users page
-Then I should see "dover" in the first "users" table row
-And I should see "lifter" in the second "users" table row
+Then I should see "dover" within the first "users" table row
+And I should see "lifter" within the second "users" table row
 
 Scenario Outline: Links within a user for different users
 Given a user exists with username: "dover"
