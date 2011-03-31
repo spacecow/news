@@ -12,6 +12,7 @@ en:
   role: "Role"
   show: "Show"
   sign_up: "Sign up"
+  username: "Username"
   label:
     add: "Add %{obj}"
     create: "Create %{obj}"
@@ -21,6 +22,7 @@ en:
     remove: "Remove %{obj}"
     show: "Show %{obj}"
     update: "Update %{obj}"
+    verify: "Verify %{obj}"
     view: "View %{obj}"
   message:
     not_you?: "Not you?"
@@ -32,7 +34,9 @@ en:
     updated: "Successfully updated %{obj}."  
   formtastic:
     labels:
+      affiliation: "Affiliation"
       content: "Content"
+      email: "Email"
       name: "Name"
 
   anonymous: "Anonymous"

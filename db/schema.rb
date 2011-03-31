@@ -13,6 +13,9 @@
 ActiveRecord::Schema.define(:version => 20110331032217) do
 
   create_table "comments", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "affiliation"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at"

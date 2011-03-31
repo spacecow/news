@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => :verify
 
   def index
     @comments = Comment.all
@@ -13,11 +13,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+  def verify
+    p params
+    @comment = Comment.new(params[:comment])
+    
+  end
+  
   def create
     if current_user; @comment = current_user.comments.build(params[:comment])
     else @comment = Comment.new(params[:comment]) end
-    if @comment.save
-      redirect_to new_comment_path, :notice => created(:comment)
+    if @comment.valid?
+      redirect_to verify_comments_path(:comment => params[:comment])
+#      redirect_to new_comment_path, :notice => created(:comment)
     else
       render :action => 'new'
     end

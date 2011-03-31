@@ -9,5 +9,6 @@ module ApplicationHelper
   def t2(s1,s2); t(lbl(s1), :obj => t(s2)) end
   def tp2(s1,s2); t(lbl(s1), :obj => pl(s2)) end
   def update_p(s); tp2(:update,s) end
+  def verify(s); t2(:verify,s) end
   def view(s); tp2(:view,s) end
 end

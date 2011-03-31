@@ -71,39 +71,53 @@ div#container div#unique div#user_nav {
 div#container div#unique div#main_content {
   float: left;
 }
-/* line 67, ../../app/stylesheets/application.sass */
+/* line 68, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content table tr th {
+  padding-right: 10px;
+}
+/* line 71, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li.error {
   background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #ffffff), color-stop(33%, #993333), color-stop(100%, #ffffff));
   background-image: -moz-linear-gradient(left, #ffffff 0%, #993333 33%, #ffffff 100%);
   background-image: linear-gradient(left, #ffffff 0%, #993333 33%, #ffffff 100%);
 }
-/* line 69, ../../app/stylesheets/application.sass */
+/* line 73, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li.error p.inline-errors {
   margin-left: 160px;
   color: white;
   text-shadow: 1px 1px 1px black;
 }
-/* line 73, ../../app/stylesheets/application.sass */
+/* line 77, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li {
   list-style-type: none;
 }
-/* line 75, ../../app/stylesheets/application.sass */
+/* line 79, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li textarea {
   width: 400px;
-  height: 200px;
+  height: 100px;
 }
-/* line 78, ../../app/stylesheets/application.sass */
+/* line 82, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li label {
   float: left;
   width: 150px;
   text-align: right;
   margin: 2px 10px 0 0;
 }
-/* line 83, ../../app/stylesheets/application.sass */
+/* line 87, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic input.submit {
   margin: 10px 0 0 160px;
 }
-/* line 85, ../../app/stylesheets/application.sass */
+/* line 89, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic input.small_submit {
   margin-top: 10px;
+}
+/* line 93, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content form.comment li label {
+  float: none;
+  display: block;
+  text-align: left;
+}
+/* line 97, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content form.comment li input {
+  width: 300px;
 }

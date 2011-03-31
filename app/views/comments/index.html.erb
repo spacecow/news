@@ -1,9 +1,19 @@
 <% title pl(:comment) %>
 
 <table id="comments">
+  <tr>
+    <th><%= t('formtastic.labels.name') %></th>
+    <th><%= t('formtastic.labels.email') %></th>
+    <th><%= t('formtastic.labels.affiliation') %></th>
+    <th><%= t('formtastic.labels.content') %></th>
+    <th><%= t(:username) %></th>
+  </tr>
   <% for comment in @comments %>
     <% if can? :show, comment %>
     <tr>
+      <td><%= comment.name %></td>
+      <td><%= comment.email %></td>
+      <td><%= comment.affiliation %></td>
       <td><%= comment.content %></td>
       <td>
         <% if comment.user %>

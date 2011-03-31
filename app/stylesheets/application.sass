@@ -7,7 +7,7 @@ $label_width: 150px
 $label_margin: $spacing
 $label_full_width: $label_width + $label_margin
 $textarea_width: 400px
-$textarea_height: 200px
+$textarea_height: 100px
 
 
 $font_size: 14px
@@ -63,6 +63,10 @@ div#container
       float: right
     div#main_content
       float: left
+      table
+        tr
+          th
+            padding-right: $spacing
       form.formtastic
         li.error
           +linear-gradient(color-stops(white, $alert_dark 33%, white), left)
@@ -84,3 +88,12 @@ div#container
           margin: $spacing 0 0 $label_full_width
         input.small_submit
           margin-top: $spacing
+      form.comment
+        li
+          label
+            float: none
+            display: block
+            text-align: left
+          input
+            width: 300px
+

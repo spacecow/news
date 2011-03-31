@@ -1,4 +1,7 @@
 <%= semantic_form_for @comment do |f| %>
-  <%= f.input :content, :label => false %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :affiliation %>
+  <%= f.input :content %>
   <%= f.submit %>
 <% end %>
