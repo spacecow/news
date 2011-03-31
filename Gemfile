@@ -6,7 +6,7 @@ gem 'formtastic' #rails g formtastic:install
 gem 'compass' #compass init rails /path/to/myrailsproject --using blueprint/semantic
 gem 'cancan' #rails g cancan:ability
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "mocha", :group => :test
+#gem "mocha", :group => :test
 
 group :development do
 #  gem 'nifty-generators', :path => "~/ruby/rails/nifty-generators"
@@ -16,7 +16,7 @@ end
 group :test do
   # gem 'spork'
   # gem 'cucumber-rails' #rails g cucumber:install --capybara --rspec
-  # gem 'capybara'
+  gem 'capybara'
   # gem 'database_cleaner'
   # gem 'pickle' #rails g pickle --paths --email
   # gem 'launchy'
