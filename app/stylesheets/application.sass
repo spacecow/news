@@ -43,6 +43,8 @@ h1
   margin-bottom: 2*$spacing
 
 div#flash_notice
+  width: 400px
+  text-align: center
   float: left  
   margin-bottom: 5px
   padding: 3px 10px
@@ -57,6 +59,7 @@ div#flash_alert
 
 div#container
   div#unique
+    width: 400px
     padding: 2*$spacing 4*$spacing
     float: left
     div#user_nav
@@ -89,6 +92,9 @@ div#container
         input.small_submit
           margin-top: $spacing
       form.comment
+        li.error
+          p.inline-errors
+            margin-left: 0
         li
           label
             float: none
@@ -96,4 +102,6 @@ div#container
             text-align: left
           input
             width: 300px
+        input.submit
+          margin: $spacing 0 0 0
 

@@ -5,3 +5,5 @@ b41f23: !ruby/object:Dooby::Task
   todo: extend comment with more fields :done
 5401b2: !ruby/object:Dooby::Task 
   todo: verify comments :done
+741a6b: !ruby/object:Dooby::Task 
+  todo: clean up interface :done
