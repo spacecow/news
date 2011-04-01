@@ -1,6 +1,7 @@
 Riecnews::Application.routes.draw do
   resources :comments do
     collection do
+      post 'validate'
       get 'verify'
     end
   end

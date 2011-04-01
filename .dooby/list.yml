@@ -3,3 +3,5 @@
   todo: a member can only see his own comments on the index page :done
 b41f23: !ruby/object:Dooby::Task 
   todo: extend comment with more fields :done
+5401b2: !ruby/object:Dooby::Task 
+  todo: verify comments :done

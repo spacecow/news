@@ -20,6 +20,7 @@ en:
     list: "List %{obj}"
     new: "New %{obj}"
     remove: "Remove %{obj}"
+    send: "Send %{obj}"
     show: "Show %{obj}"
     update: "Update %{obj}"
     verify: "Verify %{obj}"
@@ -27,6 +28,7 @@ en:
   message:
     not_you?: "Not you?"
     sure?: "Are you sure?"
+    thank_you_for_sending: "Thank you. Your comment has been sent to the editor."
     welcome: "Welcome %{user}."
   success:
     created: "Successfully created %{obj}."
@@ -38,6 +40,8 @@ en:
       content: "Content"
       email: "Email"
       name: "Name"
+    actions:
+      verify: "Send %{model}"
 
   anonymous: "Anonymous"
   comment: "Comment"

@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :create, Comment
+    can [:create,:validate,:verify], Comment
     can :create, User
 
     if user

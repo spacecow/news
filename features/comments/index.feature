@@ -7,5 +7,5 @@ And I am logged in as user "correct"
 And a comment exists with content: "A comment", user: user "correct"
 And a comment exists with content: "A second comment", user: user "wrong"
 When I go to the comments page
-Then I should see "A comment" within the first "comments" table row
-And I should see no second "comments" table row
+Then I should see "A comment" within the second "comments" table row
+But I should see no third "comments" table row

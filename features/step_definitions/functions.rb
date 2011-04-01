@@ -1,1 +1,1 @@
-def digit(s); %w(first second).index(s)+1 end
+def digit(s); %w(first second third).index(s)+1 end

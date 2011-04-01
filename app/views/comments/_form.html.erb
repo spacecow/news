@@ -1,4 +1,4 @@
-<%= semantic_form_for @comment do |f| %>
+<%= semantic_form_for @comment, :url => validate_comments_path, :method => :post do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :affiliation %>

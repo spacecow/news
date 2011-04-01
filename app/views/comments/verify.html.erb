@@ -1,5 +1,4 @@
 <% title verify(:comment) %>
-
 <p>
   <strong><%= t('formtastic.labels.name') %>:</strong>
   <%= @comment.name %>
@@ -16,3 +15,12 @@
   <strong><%= t('formtastic.labels.content') %>:</strong>
   <%= @comment.content %>
 </p>
+
+<%= semantic_form_for @comment do |f| %>
+  <%= f.input :name, :as => :hidden %>
+  <%= f.input :email, :as => :hidden %>
+  <%= f.input :affiliation, :as => :hidden %>
+  <%= f.input :content, :as => :hidden %>
+  <%= f.submit t2(:send,:comment) %>
+<% end %>
+
