@@ -20,6 +20,7 @@ $alert_dark: #933
 $notice_dark: #396
 $alert_light: #f33
 $notice_light: #4CC417
+$list_hover_background: #ddd
 
 @mixin custom_gradient($light, $dark, $corner: 10px)
   color: white
@@ -66,10 +67,11 @@ div#container
       float: right
     div#main_content
       float: left
-      table
-        tr
-          th
-            padding-right: $spacing
+      ul
+        li
+          padding: $spacing/4 0 
+        li:hover
+          background: $list_hover_background
       form.formtastic
         li.error
           +linear-gradient(color-stops(white, $alert_dark 33%, white), left)

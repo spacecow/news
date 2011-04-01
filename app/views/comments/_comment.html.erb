@@ -1,0 +1,6 @@
+<%= comment.name %> (<%= comment.username %>) <%= "<"+comment.email+">" %>
+<%= link_to t(:show), comment if can? :show, comment %>
+<%= link_to t(:edit), edit_comment_path(comment) if can? :edit, comment %>
+<%= link_to t(:del), comment, :confirm => sure?, :method => :delete if can? :destroy, comment %><br />
+<strong><%= ft(:affiliation) %>:</strong> <%= comment.affiliation %><br />
+<strong><%= t(:comment) %>:</strong> <%= comment.content %>

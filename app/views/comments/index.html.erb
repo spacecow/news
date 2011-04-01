@@ -1,34 +1,12 @@
 <% title pl(:comment) %>
 
-<table id="comments">
-  <tr>
-    <th><%= t('formtastic.labels.name') %></th>
-    <th><%= t('formtastic.labels.email') %></th>
-    <th><%= t('formtastic.labels.affiliation') %></th>
-    <th><%= t('formtastic.labels.content') %></th>
-    <th><%= t(:username) %></th>
-  </tr>
-  <% for comment in @comments %>
+<ul id="comments">
+  <% @comments.each do |comment| %>
     <% if can? :show, comment %>
-    <tr>
-      <td><%= comment.name %></td>
-      <td><%= comment.email %></td>
-      <td><%= comment.affiliation %></td>
-      <td><%= comment.content %></td>
-      <td>
-        <% if comment.user %>
-          <%= comment.user.username %>
-        <% else %>
-          <%= t(:anonymous) %>
-        <% end %>
-      </td>
-      <td><%= link_to t(:show), comment if can? :show, comment %></td>
-      <td><%= link_to t(:edit), edit_comment_path(comment) if can? :edit, comment %></td>
-      <td><%= link_to t(:del), comment, :confirm => sure?, :method => :delete if can? :destroy, comment %></td>
-    </tr>
+      <li><%= render comment %></li>
     <% end %>
   <% end %>
-</table>
+</ul>
 
 <div id="bottom_links">
   <%= link_to new(:comment),

@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update_attributes(params[:comment])
-      redirect_to new_comment_path, :notice  => updated(:comment)
+      redirect_to comments_path, :notice  => updated(:comment)
     else
       render :action => 'edit'
     end

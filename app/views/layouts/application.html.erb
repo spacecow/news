@@ -1,289 +1,280 @@
 <?xml version="1.0" encoding="utf8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<script type="text/javascript" src="../../navi-j.js"></script>
-<%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
-<%= stylesheet_link_tag 'print.css', :media => 'print' %>
-<!--[if lt IE 8]>
-  <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
-<![endif]-->   
-<%= stylesheet_link_tag "application", "formtastic" %>
-<%= javascript_include_tag :defaults %>
-<%= csrf_meta_tag %>
-<%= yield(:head) %>
-<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-<link rel="stylesheet" href="/css/setssi.css" type="text/css" />
-</head>
-<body>
-<noscript>JavaScriptを有効にしてご覧下さい。</noscript>
-<div id="container">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <script type="text/javascript" src="../../navi-j.js"></script>
+    <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
+    <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+    <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
+    <![endif]-->
+    <%= stylesheet_link_tag "application", "formtastic" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <link rel="stylesheet" href="/css/setssi.css" type="text/css" />
+  </head>
+  <body>
+    <noscript>JavaScriptを有効にしてご覧下さい。</noscript>
+    <div id="container">
+      <div id="header">
+        <p class="language">Japanese Only</p>
+        <!-- ヘッダー-->
+        <div id="header1">
+          <h1><a href="/index-j.shtml"><img id="logo" alt="電気通信研究所" src="/image1/logo2008-j.gif" width="800" height="110" name="logo" /></a></h1>
 
-      <!-- <% flash.each do |name, msg| %> -->
-      <!--   <%= content_tag :div, msg, :id => "flash_#{name}" %> -->
-      <!-- <% end %> -->
-      <!-- <div class="clear"></div> -->
-      <!-- <div id="contents"> -->
-      <!--   <div id="user_nav"> -->
-      <!--     <% if current_user %> -->
-      <!--       <%= t('message.welcome',:user=>current_user.username) %> -->
-      <!--       <%= t('message.not_you?') %> -->
-      <!--       <%= link_to t(:log_out), logout_path %> -->
-      <!--     <% else %> -->
-      <!--       <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %> -->
-      <!--     <% end %> -->
-      <!--   </div> -->
-      <!-- </div> -->
-
-<div id="header">
-<p class="language">Japanese Only</p>
-<!-- ヘッダー-->
-<div id="header1">
-    <h1><a href="/index-j.shtml"><img id="logo" alt="電気通信研究所" src="/image1/logo2008-j.gif" width="800" height="110" name="logo" /></a></h1>
-    
-</div>
-<!-- ヘッダー終了-->
-<!--  ヘッダー   -->
-</div>
-
-<div id="mainmain">
-
-<!--サイドメニュー -->
-<div id="navissi"><a href="javascript:tree('sub_a');" title="通研"><img  src="/image1/menu1.gif" alt="通研"  width="170" height="30" /></a><br /><div class="prbox1"><div class="menu"><div class="tree" id="sub_a"><a href="/syoukai/greeting/index-j.shtml">所長あいさつ</a> 
-                                <a href="/syoukai/preface/index-j.shtml">沿革</a>
-
-                                <a href="/syoukai/principles/index-j.shtml">理念・目的・目標</a></div></div></div>
-<a href="javascript:tree('sub_i');" title="通研組織"><img  alt="通研組織" src="/image1/menu22.gif" width="170" height="30" /></a><br />
-               <div class="prbox1">
-               <div class="menu">
-			<div class="tree" id="sub_i">
-                                <a href="/organization/index-j.shtml">通研組織</a> 
-                                <a href="/organization/staff.shtml">教員一覧（五十音順）</a>
-                                <a href="/organization/abstract.shtml">教員一覧（研究室別）</a></div></div></div>
-
-<a href="javascript:tree('sub_g');" title="全国共同プロジェクト研究"><img  alt="全国共同プロジェクト研究" src="/image1/menu3.gif" width="170" height="30" /></a><br />
-                   <div class="prbox1">
-                  <div class="menu">
-			<div class="tree" id="sub_g">
-                                <a href="/nation-wide/index-j.shtml">理念と概要</a>
-                                <a href="/nation-wide/index-j1.shtml">公募・実施について</a> 
-                                <a href="/nation-wide/index-j2.shtml">採択一覧</a> 
-			</div>
-                 </div>
-
-                 </div>
-
-              <!--<div class="prbox2">
-              <a href="/rieckyodo/index-j.shtml"><img  alt="通研共同研究員制度" src="/image1/menu4.gif" width="170" height="30" /></a>
-              </div>-->
-
-               <a href="javascript:tree('sub_b');" title="研究者コミュニティ活動">
-               <img  alt="研究者コミュニティ活動" src="/image1/menu5.gif" width="170" height="30" /></a><br />
-                  <div class="prbox1">
-                  <div class="menu">
-			<div class="tree" id="sub_b">
-                                <a href="/activity/nationwide/index-j.shtml">共同プロジェクト研究会</a>
-
-                                <a href="/activity/research/index-j.shtml">工学研究会</a> 
-                                <a href="/activity/lectures/index-j.shtml">通研講演会</a> 
-                                <a href="/activity/sympo/index-j.shtml">国際シンポジウム</a><a href="/activity/roadmap/index-j.shtml">アカデミックロードマップ</a> 
-			</div>
-               </div>
-               </div>
-
-<a href="javascript:tree('sub_h');" title="国際活動">
-              <img  alt="国際活動" src="/image1/menu7.gif" width="170" height="30" /></a><br />
-
-                   <div class="prbox1">
-                   <div class="menu">
-			<div class="tree" id="sub_h">
-				<a href="/activity/international/index-j.shtml">国際活動</a>
-				<a href="/activity/international/coe_nano-j.shtml">国際共同研究推進体制の構築</a>
-			</div>
-                  </div>
-                  </div>
-
-               <a href="javascript:tree('sub_c');" title="産学">
-               <img  alt="産学" src="/image1/menu8.gif" width="170" height="30" /></a><br />
-                   <div class="prbox1">
-                   <div class="menu">
-			<div class="tree" id="sub_c">
-				<a href="/activity/patent/index-j.html">公開特許案件</a>
-				<!--<a href="/activity/technique/index-j.shtml">技術移転</a>-->
-			</div>
-
-                  </div>
-                  </div>
-               <div class="prbox2">
-               <a href="/activity/educational/index-j.shtml">
-               <img  alt="教育活動" src="/image1/menu6.gif" width="170" height="30" /></a>
-               </div>
-
-                <!--<a href="javascript:tree('sub_f');" title="広報">-->
-                <img  alt="広報" src="/image1/menu9.gif" width="170" height="30" /><!--</a>--><br />
-
-                  <div class="prbox1">
-                  <div class="menu">
-			<!--<div class="tree" id="sub_f">-->
-			<a href="/activity/perio/index-j.shtml">出版物</a><a href="/riecnews/index-j.shtml">RIEC News</a>
-                        <a href="/activity/material/index-j.shtml">年次資料</a>
-                        <a href="/activity/proceeding/index.shtml">教授会議事録公開</a> 
-                       <a href="/activity/kokai/index-j.shtml">通研一般公開</a> 
-			<!--</div>-->
-
-                 </div>
-                 </div>
-
-                 <div class="prbox2">
-                 <a href="/koubo/index.shtml">
-                 <img  alt="教員公募" src="/image1/menu10.gif" width="170" height="30" /></a>
-                 </div>
-                
-                 <div class="prbox2">
-                 <a href="/event/index-j.shtml">
-
-                 <img  alt="行事・研究会" src="/image1/menu11.gif" width="170" height="30" /></a>
-                 </div>
-               
-                <a href="javascript:tree('sub_d');" title="通研データベース">
-                <img  alt="通研データベース" src="/image1/menu12.gif" width="170" height="30" /></a><br />
-                <div class="prbox1">
-                <div class="menu">
-			<div class="tree" id="sub_d">
-				<a href="/database/index-j.html" target="_blank">通研文献データベース検索</a>
-
-				<a href="/database/index-s.html" target="_blank">通研研究者総覧</a>
-			</div>
-                 </div>
-                 </div>
-
-               <div class="prbox2"><a href="/gakunai/index-j.shtml">
-               <img src="/image1/menu13.gif" width="170" height="30"  alt=""/></a>
-               </div>
-               <a href="javascript:tree('sub_e');" title="links">
-
-                <img  alt="links" src="/image1/link14.gif" width="170" height="30" /></a><br />
-                <div class="prbox1">
-                <div class="menu">
-			<div class="tree" id="sub_e">
-				<a href="http://www.tohoku.ac.jp/index-j.html" target="_blank">東北大学</a>
-                                <a href="http://www.ecei.tohoku.ac.jp/index-j.html" target="_blank">東北大学工学部電気・情報系</a>
-                                <a href="http://www.eng.tohoku.ac.jp/" target="_blank">東北大学大学院工学研究科</a>
-
-                                <a href="http://www.is.tohoku.ac.jp/index.html" target="_blank">東北大学大学院情報科学研究科</a>
-                                <a href="http://www.bureau.tohoku.ac.jp/i-synergy/" target="_blank">東北大学情報シナジー機構</a>
-                                <a href="http://www.isc.tohoku.ac.jp/" target="_blank">東北大学情報サイバーサイエンスセンター</a>
-                                 <a href="http://www.cir.tohoku.ac.jp/j/2research/prof.htm" target="_blank">東北大学学際科学国際高等研究センター</a>
-                                <a href="http://www.csis.tohoku.ac.jp/japanese/" target="_blank">東北大学 省エネルギー・スピントロニクス集積化システムセンター</a>
-                                <a href="http://www.foundation.riec.tohoku.ac.jp/" target="_blank">(財)電気通信工学振興会</a>
-
-                                <a href="http://www.shochou-kaigi.org/" target="_blank">国立大学附置研究所・センター長会議</a>
-			</div>
-                </div>
-                </div>
-<div id="mark1">
- <a href="/riecnews/index-j.shtml"><img  alt="riecnews" src="/riecnews/img/riecnews.gif" width="170" height="150" /></a>
-               <a href="https://www.srp.tohoku.ac.jp/index.html" target="_blank"><img  alt="Portal System" src="/image1/portal-j.gif" width="170" height="30" /></a>
-               <a href="/event/project2010/" target="_blank"><img alt="研究会" src="/image1/kyopro.gif" width="170" height="30" /></a>
-               <a href="/forum2010/" target="_blank"><img alt="フォーラム" src="/image1/forum2010.gif" width="170" height="30" /></a>
-
-               <a href="/koukai/" target="_blank"><img alt="通研一般公開" src="/image1/koukai.gif" width="170" height="30" /></a>
-               <a href="/riec_contents_open/" target="_blank"><img  alt="" src="/image1/content.gif" width="170" height="30" /></a>
-               <a href="/antenna/index.html" target="_blank"><img src="/image1/yagiuda.gif" alt="八木宇田"  width="170" height="30" /></a>
-              </div>
+        </div>
+        <!-- ヘッダー終了-->
+        <!--  ヘッダー   -->
       </div>
-<!--サイドメニュー 終了-->
 
-<!--  メニュー    -->
-<!--  本文    　-->
+      <div id="mainmain">
 
-<div id="riecnews">
-<ul class="feeds">
-     <li><a href="/access/index-j.shtml">交通アクセス</a></li>
-     <li><a href="/sightmap/index-j.shtml">サイトマップ</a></li>
-      <li><a href="/new/index-j.shtml">更新情報</a></li>
-      </ul>
-<!-- トップナビ終了-->
-  <ol class="path">
-  <li> <a href="../../index-j.shtml">ホーム</a></li>
-  <li> <a href="../../activity/perio/index-j.shtml">広報</a></li>
-  <li> RIEC News </li>
-  </ol>
-<div class="honbun">
-<h2>RIEC News</h2>
-<p class="markright">表紙写真をクリックして<img src="../image1/pdficon_small.gif" alt="" width="17" height="17" >をご覧ください．</p>
+        <!--サイドメニュー -->
+        <div id="navissi"><a href="javascript:tree('sub_a');" title="通研"><img  src="/image1/menu1.gif" alt="通研"  width="170" height="30" /></a><br /><div class="prbox1"><div class="menu"><div class="tree" id="sub_a"><a href="/syoukai/greeting/index-j.shtml">所長あいさつ</a>
+                <a href="/syoukai/preface/index-j.shtml">沿革</a>
 
-<h3>RIEC News 2011.3 No.1 [創刊号]</h3>
-<table >
-<tr>
-<td width="170"><a href="riecnews_no01.pdf" target="_blank"><img src="/img/riecnews_no1_150.jpg" alt="" width="150" height="211" class="videojpg"></a></td>
-<td>
-<h4>巻頭言</h4>
-<ul><li>創刊によせて 所長 中沢 正隆</li></ul>
-<h4>研究所紹介</h4>
-<h4>TOPICS</h4>
-<ul><li>仙台フォーラム2010</li>
-    <li>共同プロジェクト研究発表会2010</li>
-    <li>准教授分野の新設</li>
-    <li>通研国際シンポジウム</li>
-    <li>MIT-電子工学研究所との国際連携研究プログラムが東北大学重点戦略支援プログラムに採択</li>
-    <li>独創的研究支援プログラム</li></ul>
-<h4>New Laboratory</h4>
-<ul ><li>先端ワイヤレス通信技術（末松）研究室</li>
-    <li>情報コンテンツ（北村）研究室</li></ul>
-<h4>研究室訪問</h4>
-<ul ><li>ナノヘテロプロセス（室田・櫻庭）研究室</li>
-    <li>知的ナノ集積システム（中島・佐藤）研究室</li></ul>
-<h4>通研だより</h4>
-<ul><li>寄附研究部門の設立</li>
-    <li>2010年通研研究交流会</li>
-    <li>通研公開</li>
-     <li>RIEC豆知識(1)「視覚情報は８０％？」</li></ul>
-<h4>組織/表彰・受賞</h4></td>
-</tr>
-</table>
-</div>
-</div>
+                <a href="/syoukai/principles/index-j.shtml">理念・目的・目標</a></div></div></div>
+          <a href="javascript:tree('sub_i');" title="通研組織"><img  alt="通研組織" src="/image1/menu22.gif" width="170" height="30" /></a><br />
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_i">
+                <a href="/organization/index-j.shtml">通研組織</a>
+                <a href="/organization/staff.shtml">教員一覧（五十音順）</a>
+                <a href="/organization/abstract.shtml">教員一覧（研究室別）</a></div></div></div>
 
-<a name="unique"></a>
-<div id="unique">
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-  <div class="clear"></div>
-  <div id="user_nav">
-    <% if current_user %>
-      <%= t('message.welcome',:user=>current_user.username) %>
-      <%= t('message.not_you?') %>
-      <%= link_to t(:log_out), logout_path %>
-    <% else %>
-      <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
-    <% end %>
-  </div>
-  <div class="clear"></div>
-  <div id="main_content">
-    <%= content_tag :h1, yield(:title) if show_title? %>
-    <%= yield %>
-  </div>
-</div>
-</div>
+          <a href="javascript:tree('sub_g');" title="全国共同プロジェクト研究"><img  alt="全国共同プロジェクト研究" src="/image1/menu3.gif" width="170" height="30" /></a><br />
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_g">
+                <a href="/nation-wide/index-j.shtml">理念と概要</a>
+                <a href="/nation-wide/index-j1.shtml">公募・実施について</a>
+                <a href="/nation-wide/index-j2.shtml">採択一覧</a>
+              </div>
+            </div>
 
-<!--　本文終わり　-->
-<!--フッダー-->
-<div id="footer">
-<p>東北大学電気通信研究所</p>
-<p>〒980-8577　仙台市青葉区片平2丁目1-1</p>
-<p>TEL:022-217-5420 FAX:022-217-5426</p>
+          </div>
 
-<p><img src="/image1/mail.jpg" alt="メール"  width="242" height="15" /></p>
-</div>
-<!-- フッダー終了-->
-<!--footer-->
-</div>
-</body>
+          <!--<div class="prbox2">
+                   <a href="/rieckyodo/index-j.shtml"><img  alt="通研共同研究員制度" src="/image1/menu4.gif" width="170" height="30" /></a>
+          </div>-->
+
+          <a href="javascript:tree('sub_b');" title="研究者コミュニティ活動">
+            <img  alt="研究者コミュニティ活動" src="/image1/menu5.gif" width="170" height="30" /></a><br />
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_b">
+                <a href="/activity/nationwide/index-j.shtml">共同プロジェクト研究会</a>
+
+                <a href="/activity/research/index-j.shtml">工学研究会</a>
+                <a href="/activity/lectures/index-j.shtml">通研講演会</a>
+                <a href="/activity/sympo/index-j.shtml">国際シンポジウム</a><a href="/activity/roadmap/index-j.shtml">アカデミックロードマップ</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="javascript:tree('sub_h');" title="国際活動">
+            <img  alt="国際活動" src="/image1/menu7.gif" width="170" height="30" /></a><br />
+
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_h">
+                <a href="/activity/international/index-j.shtml">国際活動</a>
+                <a href="/activity/international/coe_nano-j.shtml">国際共同研究推進体制の構築</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="javascript:tree('sub_c');" title="産学">
+            <img  alt="産学" src="/image1/menu8.gif" width="170" height="30" /></a><br />
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_c">
+                <a href="/activity/patent/index-j.html">公開特許案件</a>
+                <!--<a href="/activity/technique/index-j.shtml">技術移転</a>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="prbox2">
+            <a href="/activity/educational/index-j.shtml">
+              <img  alt="教育活動" src="/image1/menu6.gif" width="170" height="30" /></a>
+          </div>
+
+          <!--<a href="javascript:tree('sub_f');" title="広報">-->
+          <img  alt="広報" src="/image1/menu9.gif" width="170" height="30" /><!--</a>--><br />
+
+          <div class="prbox1">
+            <div class="menu">
+              <!--<div class="tree" id="sub_f">-->
+              <a href="/activity/perio/index-j.shtml">出版物</a><a href="/riecnews/index-j.shtml">RIEC News</a>
+              <a href="/activity/material/index-j.shtml">年次資料</a>
+              <a href="/activity/proceeding/index.shtml">教授会議事録公開</a>
+              <a href="/activity/kokai/index-j.shtml">通研一般公開</a>
+              <!--</div>-->
+
+            </div>
+          </div>
+
+          <div class="prbox2">
+            <a href="/koubo/index.shtml">
+              <img  alt="教員公募" src="/image1/menu10.gif" width="170" height="30" /></a>
+          </div> <!-- prbox2 -->
+
+          <div class="prbox2">
+            <a href="/event/index-j.shtml">
+
+              <img  alt="行事・研究会" src="/image1/menu11.gif" width="170" height="30" /></a>
+          </div> <!-- prbox2 -->
+
+          <a href="javascript:tree('sub_d');" title="通研データベース">
+            <img  alt="通研データベース" src="/image1/menu12.gif" width="170" height="30" /></a><br />
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_d">
+                <a href="/database/index-j.html" target="_blank">通研文献データベース検索</a>
+
+                <a href="/database/index-s.html" target="_blank">通研研究者総覧</a>
+              </div>
+            </div>
+          </div> <!-- prbox1 -->
+
+          <div class="prbox2"><a href="/gakunai/index-j.shtml">
+              <img src="/image1/menu13.gif" width="170" height="30"  alt=""/></a>
+          </div> <!-- prbox2 -->
+          <a href="javascript:tree('sub_e');" title="links">
+
+            <img  alt="links" src="/image1/link14.gif" width="170" height="30" /></a><br />
+          <div class="prbox1">
+            <div class="menu">
+              <div class="tree" id="sub_e">
+                <a href="http://www.tohoku.ac.jp/index-j.html" target="_blank">東北大学</a>
+                <a href="http://www.ecei.tohoku.ac.jp/index-j.html" target="_blank">東北大学工学部電気・情報系</a>
+                <a href="http://www.eng.tohoku.ac.jp/" target="_blank">東北大学大学院工学研究科</a>
+
+                <a href="http://www.is.tohoku.ac.jp/index.html" target="_blank">東北大学大学院情報科学研究科</a>
+                <a href="http://www.bureau.tohoku.ac.jp/i-synergy/" target="_blank">東北大学情報シナジー機構</a>
+                <a href="http://www.isc.tohoku.ac.jp/" target="_blank">東北大学情報サイバーサイエンスセンター</a>
+                <a href="http://www.cir.tohoku.ac.jp/j/2research/prof.htm" target="_blank">東北大学学際科学国際高等研究センター</a>
+                <a href="http://www.csis.tohoku.ac.jp/japanese/" target="_blank">東北大学 省エネルギー・スピントロニクス集積化システムセンター</a>
+                <a href="http://www.foundation.riec.tohoku.ac.jp/" target="_blank">(財)電気通信工学振興会</a>
+
+                <a href="http://www.shochou-kaigi.org/" target="_blank">国立大学附置研究所・センター長会議</a>
+              </div>
+            </div>
+          </div> <!-- prbox1 -->
+          <div id="mark1">
+            <a href="/riecnews/index-j.shtml"><img  alt="riecnews" src="/riecnews/img/riecnews.gif" width="170" height="150" /></a>
+            <a href="https://www.srp.tohoku.ac.jp/index.html" target="_blank"><img  alt="Portal System" src="/image1/portal-j.gif" width="170" height="30" /></a>
+            <a href="/event/project2010/" target="_blank"><img alt="研究会" src="/image1/kyopro.gif" width="170" height="30" /></a>
+            <a href="/forum2010/" target="_blank"><img alt="フォーラム" src="/image1/forum2010.gif" width="170" height="30" /></a>
+
+            <a href="/koukai/" target="_blank"><img alt="通研一般公開" src="/image1/koukai.gif" width="170" height="30" /></a>
+            <a href="/riec_contents_open/" target="_blank"><img  alt="" src="/image1/content.gif" width="170" height="30" /></a>
+            <a href="/antenna/index.html" target="_blank"><img src="/image1/yagiuda.gif" alt="八木宇田"  width="170" height="30" /></a>
+          </div> <!-- mark1 -->
+        </div>
+        <!--サイドメニュー 終了-->
+
+        <!--  メニュー    -->
+        <!--  本文    　-->
+
+        <div id="riecnews">
+          <ul class="feeds">
+            <li><a href="/access/index-j.shtml">交通アクセス</a></li>
+            <li><a href="/sightmap/index-j.shtml">サイトマップ</a></li>
+            <li><a href="/new/index-j.shtml">更新情報</a></li>
+          </ul>
+          <!-- トップナビ終了-->
+          <ol class="path">
+            <li> <a href="../../index-j.shtml">ホーム</a></li>
+            <li> <a href="../../activity/perio/index-j.shtml">広報</a></li>
+            <li> RIEC News </li>
+          </ol>
+          <div class="honbun">
+            <h2>RIEC News</h2>
+            <p class="markright">表紙写真をクリックして<img src="../image1/pdficon_small.gif" alt="" width="17" height="17" />をご覧ください．</p>
+
+            <h3>RIEC News 2011.3 No.1 [創刊号]</h3>
+            <table>
+              <tr>
+                <td width="170"><a href="riecnews_no01.pdf" target="_blank"><img src="/img/riecnews_no1_150.jpg" alt="" width="150" height="211" class="videojpg"/></a></td>
+                <td>
+                  <h4>巻頭言</h4>
+                  <ul><li>創刊によせて 所長 中沢 正隆</li></ul>
+                  <h4>研究所紹介</h4>
+                  <h4>TOPICS</h4>
+                  <ul>
+                    <li>仙台フォーラム2010</li>
+                    <li>共同プロジェクト研究発表会2010</li>
+                    <li>准教授分野の新設</li>
+                    <li>通研国際シンポジウム</li>
+                    <li>MIT-電子工学研究所との国際連携研究プログラムが東北大学重点戦略支援プログラムに採択</li>
+                    <li>独創的研究支援プログラム</li>
+                  </ul>
+                  <h4>New Laboratory</h4>
+                  <ul >
+                    <li>先端ワイヤレス通信技術（末松）研究室</li>
+                    <li>情報コンテンツ（北村）研究室</li>
+                  </ul>
+                  <h4>研究室訪問</h4>
+                  <ul >
+                    <li>ナノヘテロプロセス（室田・櫻庭）研究室</li>
+                    <li>知的ナノ集積システム（中島・佐藤）研究室</li>
+                  </ul>
+                  <h4>通研だより</h4>
+                  <ul>
+                    <li>寄附研究部門の設立</li>
+                    <li>2010年通研研究交流会</li>
+                    <li>通研公開</li>
+                    <li>RIEC豆知識(1)「視覚情報は８０％？」</li>
+                  </ul>
+                  <h4>組織/表彰・受賞</h4>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <a name="unique"></a>
+          <div id="unique">
+            <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            <% end %>
+            <div class="clear"></div>
+            <div id="user_nav">
+              <% if current_user %>
+              <%= t('message.welcome',:user=>current_user.username) %>
+              <%= t('message.not_you?') %>
+              <%= link_to t(:log_out), logout_path %>
+              <% else %>
+              <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
+              <% end %>
+            </div>
+            <div class="clear"></div>
+            <div id="main_content">
+              <%= content_tag :h1, yield(:title) if show_title? %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--　本文終わり　-->
+      <!--フッダー-->
+      <div id="footer">
+        <p>東北大学電気通信研究所</p>
+        <p>〒980-8577　仙台市青葉区片平2丁目1-1</p>
+        <p>TEL:022-217-5420 FAX:022-217-5426</p>
+
+        <p><img src="/image1/mail.jpg" alt="メール"  width="242" height="15" /></p>
+      </div>
+      <!-- フッダー終了-->
+      <!--footer-->
+    </div>
+  </body>
 </html>
 
 <script>

@@ -1,9 +1,6 @@
 <% title "Comment" %>
 
-<p>
-  <strong><%= t('formtastic.labels.content') %>:</strong>
-  <%= @comment.content %>
-</p>
+<%= render @comment %>
 
 <div id="bottom_links">
   <% if can? :edit, @comment %>

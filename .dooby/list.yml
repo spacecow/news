@@ -11,3 +11,5 @@ b41f23: !ruby/object:Dooby::Task
   todo: make sure edit comment works :done
 90e723: !ruby/object:Dooby::Task 
   todo: refractoring comments controller :done
+56cfab: !ruby/object:Dooby::Task 
+  todo: change comment index's table to a list :done
