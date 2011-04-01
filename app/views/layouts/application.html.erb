@@ -245,15 +245,19 @@
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
             <% end %>
             <div class="clear"></div>
-            <div id="user_nav">
-              <% if current_user %>
-              <%= t('message.welcome',:user=>current_user.username) %>
-              <%= t('message.not_you?') %>
-              <%= link_to t(:log_out), logout_path %>
-              <% else %>
-              <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
-              <% end %>
-            </div>
+            <div id="top_navigation">
+              <div id="language_navigation">
+                <%= link_to current_language, toggle_language_path %>
+              </div>
+              <div id="user_navigation">
+                <% if current_user %>
+                <%= t('message.welcome',:user=>current_user.username) %>
+                <%= t('message.not_you?') %>
+                <%= link_to t(:log_out), logout_path %>
+                <% else %>
+                <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
+                <% end %>
+            </div></div>
             <div class="clear"></div>
             <div id="main_content">
               <%= content_tag :h1, yield(:title) if show_title? %>
