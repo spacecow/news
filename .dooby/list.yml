@@ -7,3 +7,5 @@ b41f23: !ruby/object:Dooby::Task
   todo: verify comments :done
 741a6b: !ruby/object:Dooby::Task 
   todo: clean up interface :done
+725a9d: !ruby/object:Dooby::Task 
+  todo: make sure edit comment works :done

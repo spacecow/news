@@ -1,6 +1,8 @@
 <% title edit(:comment) %>
 
-<%= render 'form' %>
+<%= semantic_form_for @comment do |f| %>
+  <%= render 'form', :f => f %>
+<% end %>
 
 <div id="bottom_links">
   <% if can? :show, @comment -%>

@@ -1,18 +1,15 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource :except => :verify
+  load_and_authorize_resource
 
   def index
-    p "index"
     @comments = Comment.all
   end
 
   def show
-    p "show"
     @comment = Comment.find(params[:id])
   end
 
   def new
-    @comment = Comment.new
   end
 
   def validate
@@ -42,12 +39,10 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    p "edit"
     @comment = Comment.find(params[:id])
   end
 
   def update
-    p "update"
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
       redirect_to new_comment_path, :notice  => updated(:comment)
@@ -57,7 +52,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    p "destroy"
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comments_url, :notice => deleted(:comment)
