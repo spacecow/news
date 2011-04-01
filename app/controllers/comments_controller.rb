@@ -13,8 +13,7 @@ class CommentsController < ApplicationController
   end
 
   def validate
-    if current_user; @comment = current_user.comments.build(params[:comment])
-    else @comment = Comment.new(params[:comment]) end
+    load_comment_depending_on_user
     if @comment.valid?
       flash[:notice] = created(:comment)
       redirect_to verify_comments_path(:comment => params[:comment])
@@ -28,8 +27,7 @@ class CommentsController < ApplicationController
   end
   
   def create
-    if current_user; @comment = current_user.comments.build(params[:comment])
-    else @comment = Comment.new(params[:comment]) end
+    load_comment_depending_on_user
     if @comment.save
       flash[:notice] = t('message.thank_you_for_sending')
       redirect_to new_comment_path
@@ -39,11 +37,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
   end
 
   def update
-    @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
       redirect_to new_comment_path, :notice  => updated(:comment)
     else
@@ -56,4 +52,11 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to comments_url, :notice => deleted(:comment)
   end
+
+  private
+
+    def load_comment_depending_on_user
+      if current_user; @comment = current_user.comments.build(params[:comment])
+      else @comment = Comment.new(params[:comment]) end
+    end
 end
