@@ -8,7 +8,7 @@ $label_margin: $spacing
 $label_full_width: $label_width + $label_margin
 $textarea_width: 400px
 $textarea_height: 100px
-
+$unique_width: 400px
 
 $font_size: 14px
 $a_size: $font_size - 2px
@@ -44,7 +44,7 @@ h1
   margin-bottom: 2*$spacing
 
 div#flash_notice
-  width: 400px
+  width: $unique_width
   text-align: center
   float: left  
   margin-bottom: 5px
@@ -60,11 +60,14 @@ div#flash_alert
 
 div#container
   div#unique
-    width: 400px
+    width: $unique_width
     padding: 2*$spacing 4*$spacing
     float: left
-    div#user_nav
-      float: right
+    div#top_navigation
+      div#language_navigation
+        float: left
+      div#user_navigation
+        float: right
     div#main_content
       float: left
       ul

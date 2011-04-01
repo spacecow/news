@@ -1,0 +1,6 @@
+ja:
+  english: "English"
+  japanese: "日本語"
+  formtastic:
+    labels:
+      name: "名前"
