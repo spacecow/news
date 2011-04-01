@@ -15,3 +15,7 @@ b41f23: !ruby/object:Dooby::Task
   todo: change comment index's table to a list :done
 bcafd4: !ruby/object:Dooby::Task 
   todo: english/japanese switch :done
+4f04da: !ruby/object:Dooby::Task 
+  todo: check mysql utf8 setting on server
+bf4650: !ruby/object:Dooby::Task 
+  todo: insert extra fields in user model and make autofill in comment form :done

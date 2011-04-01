@@ -1,5 +1,14 @@
 Feature:
 
+@autofill
+Scenario: A registered user will get comment fields autofilled
+Given a user exists with name: "Ben Dover", email: "king@the.wd", affiliation: "King of the world"
+And I am logged in as that user
+When I go to the new comment page
+Then the "Name" field should contain "Ben Dover"
+And the "Email" field should contain "king@the.wd"
+And the "Affiliation" field should contain "King of the world"
+
 @anonymous @validate
 Scenario: Validate an anonymous comment
 When I go to the new comment page

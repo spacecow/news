@@ -44,15 +44,17 @@ h1
   margin-bottom: 2*$spacing
 
 div#flash_notice
+  float: left  
   width: $unique_width
   text-align: center
-  float: left  
   margin-bottom: 5px
   padding: 3px 10px
   border: 1px solid black
   +custom_gradient($notice_light,$notice_dark)
 div#flash_alert
   float: left
+  width: $unique_width
+  text-align: center
   margin-bottom: 5px
   padding: 3px 10px
   border: 1px solid black
@@ -96,7 +98,7 @@ div#container
           margin: $spacing 0 0 $label_full_width
         input.small_submit
           margin-top: $spacing
-      form.comment
+      form.comment, form.user
         li.error
           p.inline-errors
             margin-left: 0

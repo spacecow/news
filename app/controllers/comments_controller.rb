@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @comment.name = current_user_name
+    @comment.email = current_user_email
+    @comment.affiliation = current_user_affiliation
   end
 
   def validate

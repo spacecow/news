@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(:version => 20110331032217) do
   end
 
   create_table "users", :force => true do |t|
+    t.string   "name"
     t.string   "username"
     t.string   "email"
+    t.string   "affiliation"
     t.integer  "roles_mask"
     t.string   "password_hash"
     t.string   "password_salt"

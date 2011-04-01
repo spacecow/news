@@ -34,7 +34,11 @@ class ApplicationController < ActionController::Base
     def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
-
+    
+    def current_user_name; current_user && current_user.name end
+    def current_user_email; current_user && current_user.email end
+    def current_user_affiliation; current_user && current_user.affiliation end
+    
     def set_language
       I18n.locale = session[:language] || I18n.default_locale
     end
