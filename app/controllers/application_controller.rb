@@ -11,11 +11,13 @@ class ApplicationController < ActionController::Base
   before_filter :set_language
   helper_method :current_user, :english?
 
+  def alert(act); t("alert.#{act}") end
   def created(s); success(:created,s) end
   def deleted(s); success(:deleted,s) end
   def d(s); t(s).downcase end
   def dp(s); pl(s).downcase end
   def english?; session[:language] == 'en' end
+  def notification(act); t("notice.#{act}") end
   def pl(s); t(s).match(/\w/) ? t(s).pluralize : t(s) end  
   def success(act,mdl); t("success.#{act}",:obj=>d(mdl)) end
   def success_p(act,mdl); t("success.#{act}",:obj=>dp(mdl)) end

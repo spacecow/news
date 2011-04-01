@@ -11,10 +11,11 @@ en:
   mini_admin: "mini-admin"
   or: " or "
   possessive: "%{owner}'s %{obj}"
+  profile: "Profile"
   role: "Role"
   show: "Show"
   sign_up: "Sign up"
-  username: "Username"
+  update: "Update"
   label:
     add: "Add %{obj}"
     create: "Create %{obj}"
@@ -27,15 +28,21 @@ en:
     update: "Update %{obj}"
     verify: "Verify %{obj}"
     view: "View %{obj}"
+    view_own: "View own %{obj}"
+  alert:
+    invalid_login_or_password: "Invalid login or password."
+  notice:
+    thank_you_for_sending: "Thank you. Your comment has been sent to the editor."
+    thank_you_for_signing_up: "Thank you for signing up! You are now logged in."
   message:
     not_you?: "Not you?"
     sure?: "Are you sure?"
-    thank_you_for_sending: "Thank you. Your comment has been sent to the editor."
-    thank_you_for_signing_up: "Thank you for signing up! You are now logged in."
     welcome: "Welcome %{user}."
   success:
     created: "Successfully created %{obj}."
     deleted: "Successfully deleted %{obj}."
+    logged_out: "Successfully logged out."
+    logged_in: "Successfully logged in."
     updated: "Successfully updated %{obj}."  
   formtastic:
     labels:
@@ -43,9 +50,9 @@ en:
       content: "Content"
       email: "Email"
       name: "Name"
-    actions:
-      verify: "Send %{model}"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      username: "Username"
 
   anonymous: "Anonymous"
   comment: "Comment"
-  own_comment: "Own comment"

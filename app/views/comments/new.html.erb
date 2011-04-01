@@ -1,11 +1,11 @@
 <%= semantic_form_for @comment, :url => validate_comments_path, :method => :post do |f| %>
-  <%= render 'form', :f => f %>
+  <%= render 'form', :f => f, :button_label => create(:comment) %>
 <% end %>
 
 <div id="bottom_links">
   <% if can? :index, @Comment %>
     <%= link_to view(:comment), comments_path %>
   <% else %>
-    <%= link_to view(:own_comment), comments_path %>
+    <%= link_to view_own(:comment), comments_path %>
   <% end %>
 </div>

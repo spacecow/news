@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, :notice => t('message.thank_you_for_signing_up')
+      redirect_to root_path, :notice => notification(:thank_you_for_signing_up)
     else
       render :action => 'new'
     end

@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def create
     load_comment_depending_on_user
     if @comment.save
-      flash[:notice] = t('message.thank_you_for_sending')
+      flash[:notice] = notification(:thank_you_for_sending)
       redirect_to new_comment_path
     else
       render :action => 'new'
