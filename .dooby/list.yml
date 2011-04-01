@@ -13,3 +13,5 @@ b41f23: !ruby/object:Dooby::Task
   todo: refractoring comments controller :done
 56cfab: !ruby/object:Dooby::Task 
   todo: change comment index's table to a list :done
+bcafd4: !ruby/object:Dooby::Task 
+  todo: english/japanese switch :done
