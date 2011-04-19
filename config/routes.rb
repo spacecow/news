@@ -4,6 +4,9 @@ Riecnews::Application.routes.draw do
       post 'validate'
       get 'verify'
     end
+    member do
+      get 'sent'
+    end
   end
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user

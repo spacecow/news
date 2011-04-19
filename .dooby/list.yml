@@ -31,3 +31,7 @@ bf0e66: !ruby/object:Dooby::Task
   todo: verify page layout :done
 aa85f4: !ruby/object:Dooby::Task 
   todo: implement mailer :done
+f14d82: !ruby/object:Dooby::Task 
+  todo: check with opera
+48c0c5: !ruby/object:Dooby::Task 
+  todo: comment box layout :done

@@ -4,6 +4,6 @@ class CommentMailer < ActionMailer::Base
   def comment_confirmation(comment)
     @comment = comment
     mail(:subject => "RIEC News Comment",
-         :from => comment.name)
+         :from => "#{comment.name} <#{comment.email.blank? ? "no@email.com" : comment.email}>")
   end
 end

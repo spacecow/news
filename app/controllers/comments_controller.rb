@@ -34,12 +34,15 @@ class CommentsController < ApplicationController
     if @comment.save
       CommentMailer.comment_confirmation(@comment).deliver
       flash[:notice] = notification(:thank_you_for_sending)
-      redirect_to new_comment_path
+      redirect_to sent_comment_path(@comment)
     else
       render :action => 'new'
     end
   end
 
+  def sent    
+  end
+  
   def edit
   end
 

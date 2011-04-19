@@ -46,6 +46,13 @@ When /^I create (?:a|an) (\w+) with ("[^"]*")((?:, "[^"]*")*)$/ do |mdl, arg1, a
   And %(I press "Create #{mdl.capitalize}")
 end
 
+# Buttons ------------------------------
+
+Then /^I should see no "([^"]*)" button$/ do |txt|
+  page.should have_no_css("input",:value => txt)
+end
+
+
 # Functions ----------------------------
 
 def attr_no(prnt,chld,attr,ordr)

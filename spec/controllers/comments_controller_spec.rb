@@ -20,7 +20,7 @@ describe CommentsController do
     end
     
     comments_controller_actions.each do |action,req|
-      if %w(new create validate verify).include?(action)
+      if %w(new create validate verify sent).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @comment.id)
           response.redirect_url.should_not eq(login_url)
@@ -42,7 +42,7 @@ describe CommentsController do
     end
     
     comments_controller_actions.each do |action,req|
-      if %w(new create index verify validate).include?(action)
+      if %w(new create index verify validate sent).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @comment.id)
           response.redirect_url.should_not eq(welcome_url)
@@ -72,7 +72,7 @@ describe CommentsController do
     end
     
     comments_controller_actions.each do |action,req|
-      if %w(new create show index verify validate).include?(action)
+      if %w(new create show index verify validate sent).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @comment.id)
           response.redirect_url.should_not eq(welcome_url)

@@ -35,6 +35,9 @@ ja:
     not_you?: "違いますか？"
     sure?: "本当に削除してよろしいですか"
     welcome: "ようこそ%{user}さん。"
+  errors:
+    blank: "%{obj}を入力してください"
+    invalid: "%{obj}は不正な値です"
   success:
     created: "正常に%{obj}が作成されました"
     deleted: "正常に%{obj}が削除されました"

@@ -32,12 +32,16 @@ en:
   alert:
     invalid_login_or_password: "Invalid login or password."
   notice:
+    contents_correct_for_sending?: "Please confirm the contents before sending."
     thank_you_for_sending: "Thank you. Your comment has been sent to the editor."
     thank_you_for_signing_up: "Thank you for signing up! You are now logged in."
   message:
     not_you?: "Not you?"
     sure?: "Are you sure?"
     welcome: "Welcome %{user}."
+  errors:
+    blank: "%{obj} can't be blank"
+    invalid: "%{obj} is invalid"
   success:
     created: "Successfully created %{obj}."
     deleted: "Successfully deleted %{obj}."

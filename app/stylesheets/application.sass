@@ -8,7 +8,7 @@ $label_margin: $spacing
 $label_full_width: $label_width + $label_margin
 $textarea_width: 400px
 $textarea_height: 100px
-$unique_width: 400px
+$unique_width: 476px
 
 $font_size: 14px
 $a_size: $font_size - 2px
@@ -61,13 +61,13 @@ div#flash_alert
   +custom_gradient($alert_light,$alert_dark)
 
 div#container
-  div#unique
+  div#unique  
     width: $unique_width
     padding: 2*$spacing 4*$spacing
     float: left
-    border-bottom: 1px solid gray
-    border-left: 10px solid gray
-    border-top: 1px solid gray
+    border: 1px solid black
+    background: #eee
+    margin-left: 10px
     div#top_navigation
       div#language_navigation
         float: left
@@ -78,8 +78,11 @@ div#container
       div#title
         font-size: 16px
         margin: 0 0 10px 5px
-      div#verify
+      div#verify, div#sent
         font-size: 14px
+        a
+          float: left
+          margin: 10px 0 0 75px
         ul
           li
             list-style-type: none

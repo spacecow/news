@@ -1,6 +1,6 @@
 <div id="title"><%= t('message.comment_title') %></div>
 
-<div id="verify">
+<div id="sent">
 <ul>
 <li>
   <span id="label"><%= t('formtastic.labels.name') %>:</span>
@@ -23,13 +23,8 @@
 </li>
 <div class="clear"></div>
 </ul>
-</div> 
 
-<%= semantic_form_for @comment do |f| %>
-  <%= f.input :name, :as => :hidden %>
-  <%= f.input :email, :as => :hidden %>
-  <%= f.input :affiliation, :as => :hidden %>
-  <%= f.input :content, :as => :hidden %>
-  <%= f.submit t2(:send,:comment), :class => :submit %>
-<% end %>
+<%= link_to "RIEC Newsのページにもどる", new_comment_path if can? :new, Comment %>
+
+</div> 
 
