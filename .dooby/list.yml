@@ -27,3 +27,5 @@ d39742: !ruby/object:Dooby::Task
   todo: lighter gradiation :done
 bf0e66: !ruby/object:Dooby::Task 
   todo: optional attributes for comment :done
+2c7a5f: !ruby/object:Dooby::Task 
+  todo: verify page layout :done

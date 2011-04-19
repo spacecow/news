@@ -1,20 +1,29 @@
-<% title verify(:comment) %>
-<p>
-  <strong><%= t('formtastic.labels.name') %>:</strong>
-  <%= @comment.name %>
-</p>
-<p>
-  <strong><%= t('formtastic.labels.email') %>:</strong>
-  <%= @comment.email %>
-</p>
-<p>
-  <strong><%= t('formtastic.labels.affiliation') %>:</strong>
-  <%= @comment.affiliation %>
-</p>
-<p>
-  <strong><%= t('formtastic.labels.content') %>:</strong>
-  <%= @comment.content %>
-</p>
+<div id="title"><%= t('message.comment_title') %></div>
+
+<div id="verify">
+<ul>
+<li>
+  <span id="label"><%= t('formtastic.labels.name') %>:</span>
+  <span id="content"><%= @comment.name %></span>
+</li>
+<div class="clear"></div>
+<li>
+  <span id="label"><%= t('formtastic.labels.email') %>:</span>
+  <span id="content"><%= @comment.email %></span>
+</li>
+<div class="clear"></div>
+<li>
+  <span id="label"><%= t('formtastic.labels.affiliation') %>:</span>
+  <span id="content"><%= @comment.affiliation %></span>
+</li>
+<div class="clear"></div>
+<li>
+  <span id="label"><%= t('formtastic.labels.content') %>:</span>
+  <span id="content"><%= @comment.content %></span>
+</li>
+<div class="clear"></div>
+</ul>
+</div> 
 
 <%= semantic_form_for @comment do |f| %>
   <%= f.input :name, :as => :hidden %>

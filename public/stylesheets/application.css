@@ -67,78 +67,112 @@ div#container div#unique {
   width: 400px;
   padding: 20px 40px;
   float: left;
+  border-bottom: 1px solid gray;
+  border-left: 10px solid gray;
+  border-top: 1px solid gray;
 }
-/* line 69, ../../app/stylesheets/application.sass */
+/* line 72, ../../app/stylesheets/application.sass */
 div#container div#unique div#top_navigation div#language_navigation {
   float: left;
 }
-/* line 71, ../../app/stylesheets/application.sass */
+/* line 74, ../../app/stylesheets/application.sass */
 div#container div#unique div#top_navigation div#user_navigation {
   float: right;
 }
-/* line 73, ../../app/stylesheets/application.sass */
+/* line 76, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content {
   float: left;
 }
-/* line 76, ../../app/stylesheets/application.sass */
+/* line 78, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#title {
+  font-size: 16px;
+  margin: 0 0 10px 5px;
+}
+/* line 81, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify {
+  font-size: 14px;
+}
+/* line 84, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify ul li {
+  list-style-type: none;
+}
+/* line 86, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify ul li span#label {
+  float: left;
+  width: 70px;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 5px;
+}
+/* line 92, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify ul li span#content {
+  float: left;
+  background: #dddddd;
+  width: 300px;
+}
+/* line 96, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify ul li:hover {
+  background: white;
+}
+/* line 99, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content ul li {
   padding: 2.5px 0;
 }
-/* line 78, ../../app/stylesheets/application.sass */
+/* line 101, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content ul li:hover {
   background: #dddddd;
 }
-/* line 81, ../../app/stylesheets/application.sass */
+/* line 104, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li.error {
   background: pink;
 }
-/* line 84, ../../app/stylesheets/application.sass */
+/* line 107, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li.error p.inline-errors {
   margin-left: 160px;
   color: white;
   text-shadow: 1px 1px 1px black;
 }
-/* line 88, ../../app/stylesheets/application.sass */
+/* line 111, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li {
   font-size: 13px;
   list-style-type: none;
   padding: 0 5px;
 }
-/* line 92, ../../app/stylesheets/application.sass */
+/* line 115, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li textarea {
   width: 400px;
   height: 100px;
 }
-/* line 95, ../../app/stylesheets/application.sass */
+/* line 118, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li label {
   float: left;
   width: 150px;
   text-align: right;
   margin: 2px 10px 0 0;
 }
-/* line 100, ../../app/stylesheets/application.sass */
+/* line 123, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic input.submit {
   margin: 10px 0 0 160px;
 }
-/* line 102, ../../app/stylesheets/application.sass */
+/* line 125, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic input.small_submit {
   margin-top: 10px;
 }
-/* line 106, ../../app/stylesheets/application.sass */
+/* line 129, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment li.error p.inline-errors, div#container div#unique div#main_content form.user li.error p.inline-errors {
   margin-left: 0;
 }
-/* line 109, ../../app/stylesheets/application.sass */
+/* line 132, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment li label, div#container div#unique div#main_content form.user li label {
   float: none;
   display: block;
   text-align: left;
 }
-/* line 113, ../../app/stylesheets/application.sass */
+/* line 136, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment li input, div#container div#unique div#main_content form.user li input {
   width: 300px;
 }
-/* line 115, ../../app/stylesheets/application.sass */
+/* line 138, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment input.submit, div#container div#unique div#main_content form.user input.submit {
   margin: 10px 0 0 5px;
 }

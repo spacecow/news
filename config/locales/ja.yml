@@ -18,8 +18,9 @@ ja:
   alert:
     invalid_login_or_password: "無効パスワードかユーザー名"
   notice:
+    contents_correct_for_sending?: "下記の内容で送信してよろしいですか？"
     thank_you_for_signing_up: "登録してくれてありがとうございました"
-    thank_you_for_sending: "コメントを発送されてありがとうございました"
+    thank_you_for_sending: "コメントの送信を完了しました"
   label:
     create: "%{obj}創造"
     edit: "%{obj}編集"
@@ -30,6 +31,7 @@ ja:
     view: "すべとの%{obj}"
     view_own: "自分の%{obj}"
   message:
+    comment_title: "RIEC Newsに関する御意見・お問い合わせ："
     not_you?: "違いますか？"
     sure?: "本当に削除してよろしいですか"
     welcome: "ようこそ%{user}さん。"
