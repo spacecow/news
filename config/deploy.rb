@@ -36,7 +36,8 @@ namespace :deploy do
   end
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/suzuki #{release_path}/public/suzuki"
+    run "ln -nfs #{shared_path}/main #{release_path}/public/main" 
+    run "ln -nfs #{shared_path}/main/index-j.shtml #{release_path}/app/views/layouts/application.html.erb"
   end
 end
 

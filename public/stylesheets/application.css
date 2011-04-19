@@ -90,55 +90,55 @@ div#container div#unique div#main_content ul li:hover {
 }
 /* line 81, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li.error {
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #ffffff), color-stop(33%, #993333), color-stop(100%, #ffffff));
-  background-image: -moz-linear-gradient(left, #ffffff 0%, #993333 33%, #ffffff 100%);
-  background-image: linear-gradient(left, #ffffff 0%, #993333 33%, #ffffff 100%);
+  background: pink;
 }
-/* line 83, ../../app/stylesheets/application.sass */
+/* line 84, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li.error p.inline-errors {
   margin-left: 160px;
   color: white;
   text-shadow: 1px 1px 1px black;
 }
-/* line 87, ../../app/stylesheets/application.sass */
+/* line 88, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li {
+  font-size: 13px;
   list-style-type: none;
+  padding: 0 5px;
 }
-/* line 89, ../../app/stylesheets/application.sass */
+/* line 92, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li textarea {
   width: 400px;
   height: 100px;
 }
-/* line 92, ../../app/stylesheets/application.sass */
+/* line 95, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic li label {
   float: left;
   width: 150px;
   text-align: right;
   margin: 2px 10px 0 0;
 }
-/* line 97, ../../app/stylesheets/application.sass */
+/* line 100, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic input.submit {
   margin: 10px 0 0 160px;
 }
-/* line 99, ../../app/stylesheets/application.sass */
+/* line 102, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.formtastic input.small_submit {
   margin-top: 10px;
 }
-/* line 103, ../../app/stylesheets/application.sass */
+/* line 106, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment li.error p.inline-errors, div#container div#unique div#main_content form.user li.error p.inline-errors {
   margin-left: 0;
 }
-/* line 106, ../../app/stylesheets/application.sass */
+/* line 109, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment li label, div#container div#unique div#main_content form.user li label {
   float: none;
   display: block;
   text-align: left;
 }
-/* line 110, ../../app/stylesheets/application.sass */
+/* line 113, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment li input, div#container div#unique div#main_content form.user li input {
   width: 300px;
 }
-/* line 112, ../../app/stylesheets/application.sass */
+/* line 115, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content form.comment input.submit, div#container div#unique div#main_content form.user input.submit {
-  margin: 10px 0 0 0;
+  margin: 10px 0 0 5px;
 }

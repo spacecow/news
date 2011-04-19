@@ -6,3 +6,4 @@ config/database.yml
 public/css
 public/image1
 public/img
+app/views/layouts/application.html.erb

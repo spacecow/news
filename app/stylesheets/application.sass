@@ -79,13 +79,16 @@ div#container
           background: $list_hover_background
       form.formtastic
         li.error
-          +linear-gradient(color-stops(white, $alert_dark 33%, white), left)
+          //+linear-gradient(color-stops(white, $alert_dark 33%, white), left)
+          background: pink
           p.inline-errors
             margin-left: $label_full_width
             color: white
             text-shadow: 1px 1px 1px black
         li
+          font-size: 13px
           list-style-type: none
+          padding: 0 5px
           textarea
             width: $textarea_width
             height: $textarea_height
@@ -110,5 +113,5 @@ div#container
           input
             width: 300px
         input.submit
-          margin: $spacing 0 0 0
+          margin: $spacing 0 0 5px
 
