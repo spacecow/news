@@ -32,6 +32,7 @@ class CommentsController < ApplicationController
   def create
     load_comment_depending_on_user
     if @comment.save
+      CommentMailer.comment_confirmation(@comment).deliver
       flash[:notice] = notification(:thank_you_for_sending)
       redirect_to new_comment_path
     else
