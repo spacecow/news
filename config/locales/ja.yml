@@ -23,6 +23,7 @@ ja:
   label:
     create: "%{obj}創造"
     edit: "%{obj}編集"
+    new: "新しい%{obj}"
     send: "%{obj}発送"
     update: "%{obj}更新"
     verify: "%{obj}確認"
