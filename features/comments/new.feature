@@ -16,7 +16,7 @@ And I fill in "Name" with "Ben Dover"
 And I fill in "Email" with "king@the.wd"
 And I fill in "Affiliation" with "King of the world"
 And I fill in "Content" with "Rock on"
-And I press "Create Comment"
+And I press "Send Comment"
 Then I should see "Successfully created comment." as notice flash message
 And I should be on the verify comments page
 And I should see "Name: Ben Dover"
@@ -31,7 +31,7 @@ And I fill in "Name" with "Ben Dover"
 And I fill in "Email" with "king@the.wd"
 And I fill in "Affiliation" with "King of the world"
 And I fill in "Content" with "Rock on"
-And I press "Create Comment"
+And I press "Send Comment"
 And I press "Send Comment"
 Then I should see "Thank you. Your comment has been sent to the editor."
 And a comment should exist with name: "Ben Dover", email: "king@the.wd", affiliation: "King of the world", content: "Rock on", user_id: nil
@@ -46,7 +46,7 @@ And I fill in "Name" with "Ben Dover"
 And I fill in "Email" with "king@the.wd"
 And I fill in "Affiliation" with "King of the world"
 And I fill in "Content" with "Rock on"
-And I press "Create Comment"
+And I press "Send Comment"
 And I press "Send Comment"
 And a comment should exist with content: "Rock on", user_id: that user
 And 1 comments should exist

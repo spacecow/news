@@ -20,5 +20,6 @@ Riecnews::Application.routes.draw do
     end
   end
 
+  match 'welcome' => 'comments#new'
   root :to => "comments#new"
 end

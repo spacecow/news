@@ -25,3 +25,5 @@ a2aa5a: !ruby/object:Dooby::Task
   todo: japanise :done
 d39742: !ruby/object:Dooby::Task 
   todo: lighter gradiation :done
+bf0e66: !ruby/object:Dooby::Task 
+  todo: optional attributes for comment :done
