@@ -35,3 +35,7 @@ f14d82: !ruby/object:Dooby::Task
   todo: check with opera
 48c0c5: !ruby/object:Dooby::Task 
   todo: comment box layout :done
+ab979b: !ruby/object:Dooby::Task 
+  todo: can only see his own sent comment
+d92e15: !ruby/object:Dooby::Task 
+  todo: layout gray box :done

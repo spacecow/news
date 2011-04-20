@@ -32,4 +32,7 @@ module ApplicationHelper
     end
     ret
   end
+
+  def verify_page; request.url =~ /comments\/verify/ end
+  def sent_page; request.url =~ /comments\/\d+\/sent/ end
 end

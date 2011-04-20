@@ -18,7 +18,6 @@ class CommentsController < ApplicationController
   def validate
     load_comment_depending_on_user
     if @comment.valid?
-      flash[:notice] = notification(:contents_correct_for_sending?)
       redirect_to verify_comments_path(:comment => params[:comment])
     else
       render :action => 'new'

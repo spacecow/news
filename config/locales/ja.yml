@@ -18,14 +18,14 @@ ja:
   alert:
     invalid_login_or_password: "無効パスワードかユーザー名"
   notice:
-    contents_correct_for_sending?: "下記の内容で送信してよろしいですか？"
+    contents_correct_for_sending?: "下記のコメントで送信してよろしいですか？"
     thank_you_for_signing_up: "登録してくれてありがとうございました"
     thank_you_for_sending: "コメントの送信を完了しました"
   label:
     create: "%{obj}創造"
     edit: "%{obj}編集"
     new: "新しい%{obj}"
-    send: "%{obj}発送"
+    send: "%{obj}送信"
     update: "%{obj}更新"
     verify: "%{obj}確認"
     view: "すべとの%{obj}"

@@ -1,6 +1,6 @@
-<div id="title"><%= t('message.comment_title') %></div>
-
 <div id="verify">
+
+<div id="title"><%= notification(:contents_correct_for_sending?) %></div>
 <ul>
 <li>
   <span id="label"><%= t('formtastic.labels.name') %>:</span>
@@ -23,13 +23,13 @@
 </li>
 <div class="clear"></div>
 </ul>
-</div> 
 
-<%= semantic_form_for @comment do |f| %>
+<%= semantic_form_for @comment, :html => {:class => "plain"} do |f| %>
   <%= f.input :name, :as => :hidden %>
   <%= f.input :email, :as => :hidden %>
   <%= f.input :affiliation, :as => :hidden %>
   <%= f.input :content, :as => :hidden %>
-  <%= f.submit t2(:send,:comment), :class => :submit %>
+  <%= f.submit t2(:send,:comment), :class => :list %>
 <% end %>
+</div> 
 

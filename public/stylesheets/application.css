@@ -1,29 +1,29 @@
-/* line 32, ../../app/stylesheets/application.sass */
+/* line 30, ../../app/stylesheets/application.sass */
 div.clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 37, ../../app/stylesheets/application.sass */
+/* line 35, ../../app/stylesheets/application.sass */
 a {
   color: #4b7399;
   text-decoration: none;
   font-size: 12px;
 }
 
-/* line 42, ../../app/stylesheets/application.sass */
+/* line 40, ../../app/stylesheets/application.sass */
 h1 {
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-/* line 46, ../../app/stylesheets/application.sass */
+/* line 44, ../../app/stylesheets/application.sass */
 div#flash_notice {
   float: left;
   width: 476px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 3px 10px;
   border: 1px solid black;
   color: white;
@@ -40,12 +40,12 @@ div#flash_notice {
   background-image: linear-gradient(top, #4cc417 0%, #339966 100%);
 }
 
-/* line 54, ../../app/stylesheets/application.sass */
+/* line 52, ../../app/stylesheets/application.sass */
 div#flash_alert {
   float: left;
   width: 476px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 3px 10px;
   border: 1px solid black;
   color: white;
@@ -62,122 +62,113 @@ div#flash_alert {
   background-image: linear-gradient(top, #ff3333 0%, #993333 100%);
 }
 
-/* line 64, ../../app/stylesheets/application.sass */
+/* line 65, ../../app/stylesheets/application.sass */
 div#container div#unique {
   width: 476px;
   padding: 20px 40px;
   float: left;
-  border: 1px solid black;
-  background: #eeeeee;
   margin-left: 10px;
 }
-/* line 72, ../../app/stylesheets/application.sass */
+/* line 73, ../../app/stylesheets/application.sass */
 div#container div#unique div#top_navigation div#language_navigation {
   float: left;
 }
-/* line 74, ../../app/stylesheets/application.sass */
+/* line 75, ../../app/stylesheets/application.sass */
 div#container div#unique div#top_navigation div#user_navigation {
   float: right;
 }
-/* line 76, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content {
-  float: left;
-}
 /* line 78, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content div#title {
+div#container div#unique div#main_content div#form {
+  border: 1px solid black;
+  background: #eeeeee;
+  padding: 10px;
+}
+/* line 82, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#form div#title {
   font-size: 16px;
   margin: 0 0 10px 5px;
 }
-/* line 81, ../../app/stylesheets/application.sass */
+/* line 85, ../../app/stylesheets/application.sass */
 div#container div#unique div#main_content div#verify, div#container div#unique div#main_content div#sent {
+  width: 400px;
+  margin: 0 auto;
   font-size: 14px;
 }
-/* line 83, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content div#verify a, div#container div#unique div#main_content div#sent a {
-  float: left;
-  margin: 10px 0 0 75px;
-}
-/* line 87, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content div#verify ul li, div#container div#unique div#main_content div#sent ul li {
+/* line 89, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify li, div#container div#unique div#main_content div#sent li {
   list-style-type: none;
 }
-/* line 89, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content div#verify ul li span#label, div#container div#unique div#main_content div#sent ul li span#label {
+/* line 91, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify li span#label, div#container div#unique div#main_content div#sent li span#label {
   float: left;
   width: 70px;
   text-align: right;
   font-weight: bold;
   margin-right: 5px;
 }
-/* line 95, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content div#verify ul li span#content, div#container div#unique div#main_content div#sent ul li span#content {
+/* line 97, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify li span#content, div#container div#unique div#main_content div#sent li span#content {
   float: left;
   background: #dddddd;
   width: 300px;
 }
-/* line 99, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content div#verify ul li:hover, div#container div#unique div#main_content div#sent ul li:hover {
-  background: white;
-}
-/* line 102, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content ul li {
-  padding: 2.5px 0;
+/* line 101, ../../app/stylesheets/application.sass */
+div#container div#unique div#main_content div#verify div#title, div#container div#unique div#main_content div#sent div#title {
+  font-size: 16px;
+  margin: 0 0 10px 75px;
 }
 /* line 104, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content ul li:hover {
-  background: #dddddd;
+div#container div#unique div#main_content div#verify a, div#container div#unique div#main_content div#sent a {
+  float: left;
+  margin: 10px 0 0 75px;
 }
-/* line 107, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic li.error {
+
+/* line 113, ../../app/stylesheets/application.sass */
+form.formtastic li.error {
   background: pink;
-}
-/* line 110, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic li.error p.inline-errors {
-  margin-left: 160px;
   color: white;
   text-shadow: 1px 1px 1px black;
 }
-/* line 114, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic li {
+/* line 117, ../../app/stylesheets/application.sass */
+form.formtastic li {
   font-size: 13px;
   list-style-type: none;
   padding: 0 5px;
 }
-/* line 118, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic li textarea {
-  width: 400px;
-  height: 100px;
-}
 /* line 121, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic li label {
+form.formtastic li label {
   float: left;
   width: 150px;
   text-align: right;
   margin: 2px 10px 0 0;
 }
 /* line 126, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic input.submit {
-  margin: 10px 0 0 160px;
+form.formtastic li input {
+  width: 300px;
 }
 /* line 128, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.formtastic input.small_submit {
-  margin-top: 10px;
+form.formtastic li textarea {
+  width: 400px;
+  height: 100px;
 }
-/* line 132, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.comment li.error p.inline-errors, div#container div#unique div#main_content form.user li.error p.inline-errors {
-  margin-left: 0;
+/* line 131, ../../app/stylesheets/application.sass */
+form.formtastic input.list {
+  margin: 10px 0 0 75px;
 }
+
 /* line 135, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.comment li label, div#container div#unique div#main_content form.user li label {
+form.block li label {
   float: none;
   display: block;
   text-align: left;
 }
 /* line 139, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.comment li input, div#container div#unique div#main_content form.user li input {
-  width: 300px;
+form.block input.submit {
+  margin-top: 5px;
 }
-/* line 141, ../../app/stylesheets/application.sass */
-div#container div#unique div#main_content form.comment input.submit, div#container div#unique div#main_content form.user input.submit {
-  margin: 10px 0 0 5px;
+
+/* line 142, ../../app/stylesheets/application.sass */
+div.full {
+  border: 1px solid black;
+  background: #eeeeee;
 }

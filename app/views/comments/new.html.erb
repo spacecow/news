@@ -1,13 +1,16 @@
-<div id="title"><%= t('message.comment_title') %></div>
+<div id="form">
+  <div id="title"><%= t('message.comment_title') %></div>
 
-<%= semantic_form_for @comment, :url => validate_comments_path, :method => :post do |f| %>
+  <%= semantic_form_for @comment, :url => validate_comments_path,
+  :method => :post, :html => {:class => "block"} do |f| %>
   <%= render 'form', :f => f, :button_label => t2(:send,:comment) %>
-<% end %>
-
-<div id="bottom_links">
-  <% if can? :index, @Comment %>
-    <%= link_to view(:comment), comments_path %>
-  <% else %>
-    <%= link_to view_own(:comment), comments_path if current_user %>
   <% end %>
+
+  <div id="bottom_links">
+    <% if can? :index, @Comment %>
+    <%= link_to view(:comment), comments_path %>
+    <% else %>
+    <%= link_to view_own(:comment), comments_path if current_user %>
+    <% end %>
+  </div>
 </div>
