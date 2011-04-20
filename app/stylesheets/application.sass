@@ -25,7 +25,7 @@ $list_hover_background: #ddd
   font-weight: bold
   padding: 5px
   +border-radius($corner)
-  +linear-gradient(color-stops($light, $dark))
+  +background-image(linear-gradient(color-stops($light, $dark)))
 
 div.clear
   clear: both
@@ -88,6 +88,7 @@ div#container
         font-size: 14px
         li
           list-style-type: none
+          margin: 3px 0
           span#label
             float: left
             width: $list_label_width
