@@ -18,7 +18,7 @@ ja:
   alert:
     invalid_login_or_password: "無効パスワードかユーザー名"
   notice:
-    contents_correct_for_sending?: "下記のコメントで送信してよろしいですか？"
+    contents_correct_for_sending?: "下記のコメントを送信してよろしいですか？"
     thank_you_for_signing_up: "登録してくれてありがとうございました"
     thank_you_for_sending: "コメントの送信を完了しました"
   label:
@@ -46,10 +46,10 @@ ja:
     updated: "正常に%{obj}が更新されました"
   formtastic:
     labels:
-      affiliation: "所属"
+      affiliation: "御所属"
       content: "コメント"
       email: "Eメール"
-      name: "名前"
+      name: "お名前"
       password: "パスワード"
       password_confirmation: "パスワード確認"
       username: "ユーザー名"

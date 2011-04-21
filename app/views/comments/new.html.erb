@@ -2,7 +2,7 @@
   <div id="title"><%= t('message.comment_title') %></div>
 
   <%= semantic_form_for @comment, :url => validate_comments_path,
-  :method => :post, :html => {:class => "block"} do |f| %>
+  :method => :post do |f| %>
   <%= render 'form', :f => f, :button_label => t2(:send,:comment) %>
   <% end %>
 

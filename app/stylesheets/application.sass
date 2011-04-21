@@ -3,9 +3,6 @@
 
 $spacing: 10px
 $main_width: 900px
-$label_width: 150px
-$label_margin: $spacing
-$label_full_width: $label_width + $label_margin
 $unique_width: 476px
 
 $font_size: 14px
@@ -19,6 +16,18 @@ $notice_dark: #396
 $alert_light: #f33
 $notice_light: #4CC417
 $list_hover_background: #ddd
+
+/* FORM ------------------
+$form_font_size: 13px
+$field_width: 300px
+$textarea_width: 300px
+$textarea_height: 100px 
+$label_width: 50px
+$label_margin: $spacing
+$label_spacing_horizontal: $spacing/2
+$label_spacing_vertical: $spacing/4
+$label_full_width: $label_width + $label_margin + $label_spacing_horizontal
+
 
 @mixin custom_gradient($light, $dark, $corner: 10px)
   color: white
@@ -60,7 +69,7 @@ div#flash_alert
 
 $list_label_width: 70px
 $list_label_margin: 5px
-$full_list_label_width: $list_label_width + $list_label_margin
+$list_label_full_width: $list_label_width + $list_label_margin
 div#container
   div#unique  
     width: $unique_width
@@ -76,12 +85,14 @@ div#container
         float: right
     div#main_content
       div#form
+        width: $label_full_width*2+$field_width
         border: 1px solid black
         background: #eee
         padding: $spacing
         div#title
           font-size: 16px
-          margin: 0 0 10px 5px
+          text-align: center
+          margin-bottom: $spacing
       div#verify, div#sent
         width: 400px
         margin: 0 auto
@@ -101,21 +112,21 @@ div#container
             width: 300px
         div#title
           font-size: 16px
-          margin: 0 0 $spacing $full_list_label_width      
+          margin: 0 0 $spacing $list_label_full_width      
         a
           float: left
           margin: 10px 0 0 75px
 
-$form_font_size: 13px
-$field_width: 300px
-$textarea_width: 400px
-$textarea_height: 100px 
 form.formtastic
   li.error
     background: pink
     color: white
     text-shadow: 1px 1px 1px black
+    padding: $label_spacing_vertical $label_spacing_horizontal
+    p.inline-errors
+      margin-left: $label_full_width
   li
+    float: left
     font-size: $form_font_size
     list-style-type: none
     padding: 0 $spacing/2
@@ -129,8 +140,10 @@ form.formtastic
     textarea
       width: $textarea_width
       height: $textarea_height
+  input.submit
+    margin: $spacing/2 0 0 $label_full_width
   input.list
-    margin: $spacing 0 0 $full_list_label_width  
+    margin: $spacing 0 0 $list_label_full_width
 form.block
   li
     label
