@@ -39,3 +39,5 @@ d92e15: !ruby/object:Dooby::Task
   todo: layout gray box :done
 d09bce: !ruby/object:Dooby::Task 
   todo: check with opera :done
+6e2600: !ruby/object:Dooby::Task 
+  todo: email affiliation switch

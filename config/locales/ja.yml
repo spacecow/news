@@ -48,7 +48,7 @@ ja:
     labels:
       affiliation: "御所属"
       content: "コメント"
-      email: "Eメール"
+      email: "E-mail"
       name: "お名前"
       password: "パスワード"
       password_confirmation: "パスワード確認"
