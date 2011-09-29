@@ -17,7 +17,7 @@ And I fill in "Email" with "king@the.wd"
 And I fill in "Affiliation" with "King of the world"
 And I fill in "Content" with "Rock on"
 And I press "Send Comment"
-Then I should see "Please confirm the contents before sending." as notice flash message
+Then I should see "Please confirm the contents before sending."
 And I should be on the verify comments page
 And I should see "Name: Ben Dover"
 And I should see "Email: king@the.wd"

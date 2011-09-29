@@ -1,0 +1,15 @@
+<h1>Access Log</h1>
+
+<div>
+  Total hits: <%= @log.total_hits %><br>
+  Unique hits: <%= @log.unique_hits %>
+</div>
+
+<% @log.keyed_logs.each do |key,month_log| %>
+  <div>
+    <br>
+    <h3><%= month_log.first.month_to_s %></h3>
+    Total hits: <%= @log.monthly_total_hits(key) %><br>
+    Unique hits: <%= @log.monthly_unique_hits(key) %>
+  </div>
+<% end %>

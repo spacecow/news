@@ -1,5 +1,5 @@
 class CommentMailer < ActionMailer::Base
-  default :to => "jsveholm@riec.tohoku.ac.jp"
+  default :to => "riec-w3adm@riec.tohoku.ac.jp"
 
   def comment_confirmation(comment)
     @comment = comment

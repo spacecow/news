@@ -1,4 +1,7 @@
 Riecnews::Application.routes.draw do
+  #get "access_logs/index"
+
+  resources :access_logs, :only => :index
   resources :comments do
     collection do
       post 'validate'
@@ -14,6 +17,7 @@ Riecnews::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'sessions#new', :as => :login
   match 'toggle_language' => 'application#toggle_language', :as => :toggle_language
+  match 'index-j.shtml', :controller => "comments", :action => "new"
 
   resources :sessions
   resources :users do
