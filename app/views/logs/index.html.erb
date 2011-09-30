@@ -1,8 +1,9 @@
 <h1>Access Log</h1>
 
 <div>
-  Total hits: <%= @log.total_hits %><br>
-  Unique hits: <%= @log.unique_hits %>
+  Top page hits: <%= @log.total_hits %>(<%= @log.unique_hits %>)<br>
+  Pdf1 downloads: <%= @pdflog1.total_hits %>(<%= @pdflog1.unique_hits %>)<br>
+  Pdf2 downloads: <%= @pdflog2.total_hits %>(<%= @pdflog2.unique_hits %>)
 </div>
 
 <%= form_tag logs_path, :method => :get do %>
@@ -13,7 +14,8 @@
   <div>
     <br>
     <h3><%= month_log.first.month_to_s %></h3>
-    Total hits: <%= @log.monthly_total_hits(key) %><br>
-    Unique hits: <%= @log.monthly_unique_hits(key) %>
+    Top page hits: <%= @log.monthly_total_hits(key) %>(<%= @log.monthly_unique_hits(key) %>)<br>
+    Pdf1 downloads: <%= @pdflog1.monthly_total_hits(key) %>(<%= @pdflog1.monthly_unique_hits(key) %>)<br>
+    Pdf2 downloads: <%= @pdflog2.monthly_total_hits(key) %>(<%= @pdflog2.monthly_unique_hits(key) %>)
   </div>
 <% end %>

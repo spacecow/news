@@ -17,4 +17,10 @@ describe ApacheAccessLog do
       ApacheAccessLog.load("other").should eq ["other lines"] 
     end
   end
+
+  describe "#top_page_log" do
+    it "" do
+      RiecnewsLog.top_page_log
+    end
+  end
 end

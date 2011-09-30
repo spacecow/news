@@ -1,7 +1,6 @@
 class ApacheAccessLog < LogAnalyzer
-  def initialize(logs)
-    @logs = logs
-  end
+
+  def merge(log); ApacheAccessLog.new logs.concat(log.logs) end
 
   class << self
     def path; "/usr/local/apache2/logs/www/access_log" end
