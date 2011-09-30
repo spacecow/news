@@ -34,6 +34,7 @@ GEM
       activesupport (= 3.0.5)
     activesupport (3.0.5)
     addressable (2.2.6)
+    annotate (2.4.0)
     arel (2.0.10)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
@@ -150,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   bcrypt-ruby
   cancan
   capybara

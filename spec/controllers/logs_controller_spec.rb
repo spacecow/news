@@ -1,12 +1,10 @@
 require 'spec_helper'
 
-describe AccessLogsController do
-
+describe LogsController do
   describe "GET 'index'" do
     it "should be successful" do
       get 'index'
       response.should be_success
     end
   end
-
 end

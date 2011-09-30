@@ -1,36 +1,35 @@
 <div id="verify">
+  <div id="title"><%= notification(:contents_correct_for_sending?) %></div>
+  <ul>
+    <li>
+      <span id="label"><%= t('formtastic.labels.name') %>:</span>
+      <span id="content"><%= @comment.name %></span>
+    </li>
+    <div class="clear"></div>
+    <li>
+      <span id="label"><%= t('formtastic.labels.affiliation') %>:</span>
+      <span id="content"><%= @comment.affiliation %></span>
+    </li>
+    <div class="clear"></div>
+    <li>
+      <span id="label"><%= t('formtastic.labels.email') %>:</span>
+      <span id="content"><%= @comment.email %></span>
+    </li>
+    <div class="clear"></div>
+    <li>
+      <span id="label"><%= t('formtastic.labels.content') %>:</span>
+      <span id="content"><%= @comment.content %></span>
+    </li>
+    <div class="clear"></div>
+  </ul>
 
-<div id="title"><%= notification(:contents_correct_for_sending?) %></div>
-<ul>
-<li>
-  <span id="label"><%= t('formtastic.labels.name') %>:</span>
-  <span id="content"><%= @comment.name %></span>
-</li>
-<div class="clear"></div>
-<li>
-  <span id="label"><%= t('formtastic.labels.affiliation') %>:</span>
-  <span id="content"><%= @comment.affiliation %></span>
-</li>
-<div class="clear"></div>
-<li>
-  <span id="label"><%= t('formtastic.labels.email') %>:</span>
-  <span id="content"><%= @comment.email %></span>
-</li>
-<div class="clear"></div>
-<li>
-  <span id="label"><%= t('formtastic.labels.content') %>:</span>
-  <span id="content"><%= @comment.content %></span>
-</li>
-<div class="clear"></div>
-</ul>
-
-<%= semantic_form_for @comment, :html => {:class => "plain"} do |f| %>
-  <%= f.input :name, :as => :hidden %>
-  <%= f.input :email, :as => :hidden %>
-  <%= f.input :affiliation, :as => :hidden %>
-  <%= f.input :content, :as => :hidden %>
-  <div class="clear"></div>
-  <%= f.submit t2(:send,:comment), :class => :list %>
-<% end %>
-</div> 
+  <%= semantic_form_for @comment, :html => {:class => "plain"} do |f| %>
+    <%= f.input :name, :as => :hidden %>
+    <%= f.input :email, :as => :hidden %>
+    <%= f.input :affiliation, :as => :hidden %>
+    <%= f.input :content, :as => :hidden %>
+    <div class="clear"></div>
+    <%= f.submit t2(:send,:comment), :class => :list %>
+  <% end %>
+</div>
 

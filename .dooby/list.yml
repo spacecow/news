@@ -41,3 +41,5 @@ d09bce: !ruby/object:Dooby::Task
   todo: check with opera :done
 6e2600: !ruby/object:Dooby::Task 
   todo: email affiliation switch
+1fe87a: !ruby/object:Dooby::Task 
+  todo: make log into an active object :doing

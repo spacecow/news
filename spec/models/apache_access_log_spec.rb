@@ -62,7 +62,9 @@ describe ApacheAccessLog do
       ApacheAccessLog.save(s)
       log = ApacheAccessLog.riecnews_root_logs.logs.first
       log.ip.should eq '172.20.0.146'
-      log.date.should eq Date.parse('2011-9-28') 
+      log.date.year.should eq Date.parse('2011-9-27').year
+      log.date.month.should eq Date.parse('2011-9-27').month
+      log.date.day.should eq Date.parse('2011-9-27').day 
     end
   end
 

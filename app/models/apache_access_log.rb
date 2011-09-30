@@ -24,7 +24,7 @@ class ApacheAccessLog < LogAnalyzer
   class << self
     def path; "/usr/local/apache2/logs/www/access_log" end
     def riecnews_root_logs
-      logs = riecnews_root_logs_arr.map{|s| Log.new(s)}
+      logs = riecnews_root_logs_arr.map{|a| Log.new(:ip => a[0], :date => Date.parse(a[1]))}
       ApacheAccessLog.new logs
     end
     def riecnews_root_logs_arr

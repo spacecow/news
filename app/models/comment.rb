@@ -11,3 +11,18 @@ class Comment < ActiveRecord::Base
     I18n.t(:anonymous)
   end
 end
+
+# == Schema Information
+#
+# Table name: comments
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(255)
+#  email       :string(255)
+#  affiliation :string(255)
+#  content     :text
+#  user_id     :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

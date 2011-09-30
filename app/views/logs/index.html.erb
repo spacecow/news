@@ -5,6 +5,10 @@
   Unique hits: <%= @log.unique_hits %>
 </div>
 
+<%= form_tag logs_path, :method => :get do %>
+  <%= submit_tag t(:generate) %>
+<% end %>
+
 <% @log.keyed_logs.each do |key,month_log| %>
   <div>
     <br>

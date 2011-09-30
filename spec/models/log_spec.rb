@@ -8,7 +8,7 @@ describe ApacheAccessLog do
     
     context "gives the month from the log..." do
       before(:each) do
-        @log = Log.new(['135.20.0.146','20/Aug/2011:14:06:01 +0900'])
+        @log = Log.new(:ip => '135.20.0.146', :date => Date.parse('20/Aug/2011:14:06:01 +0900'))
       end
       
       it "abbrivated" do
@@ -21,3 +21,13 @@ describe ApacheAccessLog do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: logs
+#
+#  id   :integer(4)      not null, primary key
+#  ip   :string(255)
+#  date :datetime
+#
+

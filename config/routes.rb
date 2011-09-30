@@ -1,7 +1,5 @@
 Riecnews::Application.routes.draw do
-  #get "access_logs/index"
-
-  resources :access_logs, :only => :index
+  resources :logs, :only => :index
   resources :comments do
     collection do
       post 'validate'
