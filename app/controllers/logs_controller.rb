@@ -2,11 +2,11 @@ class LogsController < ApplicationController
   def index
     case params[:commit]
     when "Generate"
-      @log = ApacheAccessLog.riecnews_root_logs
+      @log = RiecnewsLog.top_page_logs
       Log.destroy_all
       @log.logs.each{|log| log.save} 
     else 
-      @log = ApacheAccessLog.new Log.all
+      @log = RiecnewsLog.new Log.all
     end
   end
 end
