@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe ApacheAccessLog do
-  describe "#load_date" do
+  describe "#load_date", focus:true do
     it "parses an apache log string" do
       Log.load_date('28/Sep/2011:14:19:14 +0900').should eq Date.parse('2011-9-28')
     end
