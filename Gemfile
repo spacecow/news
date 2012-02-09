@@ -12,21 +12,21 @@ gem "escape_utils"
 gem 'negative-captcha', :git => 'https://github.com/stefants/negative-captcha.git'
 
 group :development do
-  gem 'nifty-generators', :path => "~/ruby/rails/nifty-generators"
-  gem "rspec-rails", '2.7.0' #rails g rspec:install
-  gem 'guard-cucumber'
+#  gem 'nifty-generators', :path => "~/ruby/rails/nifty-generators"
+#  gem "rspec-rails", '2.7.0' #rails g rspec:install
+#  gem 'guard-cucumber'
 end
 
 group :test do
-  gem 'spork', '> 0.9.0.rc'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'cucumber-rails' #rails g cucumber:install --capybara --rspec
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'pickle' #rails g pickle --paths --email
-  gem 'launchy'
-  gem 'factory_girl'
-  gem 'gherkin'
+#  gem 'spork', '> 0.9.0.rc'
+#  gem 'guard'
+#  gem 'guard-rspec'
+#  gem 'guard-spork'
+#  gem 'cucumber-rails' #rails g cucumber:install --capybara --rspec
+#  gem 'capybara'
+#  gem 'database_cleaner'
+#  gem 'pickle' #rails g pickle --paths --email
+#  gem 'launchy'
+#  gem 'factory_girl'
+#  gem 'gherkin'
 end
