@@ -3,21 +3,41 @@
 
   <%= form_tag validate_comments_path, :class => :formtastic do %>
     <%= raw negative_captcha(@captcha) %>
-    <li>
+    <li id="comment_name_input" class="<%= @comment.errors[:name].present? ? 'error' : '' %>">
       <%= negative_label_tag(@captcha, :name, "#{ft(:name)}*") %>
       <%= negative_text_field_tag @captcha, :name %>
+      <% if @comment.errors[:name].present? %>
+        <p class="inline-errors">
+          <%= @comment.errors[:name].join %>
+        </p>
+      <% end %>
     </li>
-    <li>
+    <li class="<%= @comment.errors[:affiliation].present? ? 'error' : '' %>">
       <%= negative_label_tag(@captcha, :affiliation, ft(:affiliation)) %>
       <%= negative_text_field_tag @captcha, :affiliation %>
+      <% if @comment.errors[:affiliation].present? %>
+        <p class="inline-errors">
+          <%= @comment.errors[:affiliation].join %>
+        </p>
+      <% end %>
     </li>
-    <li>
+    <li id="comment_email_input" class="<%= @comment.errors[:email].present? ? 'error' : '' %>">
       <%= negative_label_tag(@captcha, :email, ft(:email)) %>
       <%= negative_text_field_tag @captcha, :email %>
+      <% if @comment.errors[:email].present? %>
+        <p class="inline-errors">
+          <%= @comment.errors[:email].join %>
+        </p>
+      <% end %>
     </li>
-    <li>
+    <li id="comment_content_input" class="<%= @comment.errors[:content].present? ? 'error' : '' %>">
       <%= negative_label_tag(@captcha, :content, "#{ft(:content)}*") %>
       <%= negative_text_area_tag @captcha, :content %>
+      <% if @comment.errors[:content].present? %>
+        <p class="inline-errors">
+          <%= @comment.errors[:content].join %>
+        </p>
+      <% end %>
     </li>
     <%= submit_tag t2(:send,:comment), :class => :submit %>
   <% end %>

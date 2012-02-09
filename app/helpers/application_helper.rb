@@ -17,17 +17,17 @@ module ApplicationHelper
   def view(s); tp2(:view,s) end
   def view_own(s); tp2(:view_own,s) end
 
-  def insert_header
+  def insert_header(s)
     ret = ""
-    File.open("/www/htdocs/header/index-j.html", "r:iso-2022-jp").each do |line|
+    File.open("/www/htdocs#{s}", "r:iso-2022-jp").each do |line|
       ret += line
     end
     ret
   end
 
-  def insert_menu
+  def insert_menu(s)
     ret = ""
-    File.open("/www/htdocs/navi/index-j4.html", "r:iso-2022-jp").each do |line|
+    File.open("/www/htdocs#{s}", "r:iso-2022-jp").each do |line|
       ret += line
     end
     ret
