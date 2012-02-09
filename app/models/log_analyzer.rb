@@ -29,7 +29,7 @@ class LogAnalyzer
   class << self
     def load(s=nil); %x[cat "#{path}" | grep "#{s}"].split("\n") end
     def log(cat,s=nil)
-      logs = send("#{cat}_log_arr",s).map{|a| Log.new(:ip => a[0], :date => Date.parse(a[1]), :category => cat)}
+      logs = send("#{cat}_log_arr",s).map{|a| Log.new(:ip => a[0], :date => Log.load_date(a[1]), :category => cat)}
       ApacheAccessLog.new logs
     end
     def log_arr(cat,s=nil)

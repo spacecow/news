@@ -18,6 +18,24 @@ describe RiecnewsLog do
     end
   end
 
+  context "#log" do
+    it "" do
+      s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
+      RiecnewsLog.save(s)
+      log = RiecnewsLog.log('top_page').logs.first
+      log.ip.should eq '172.20.0.146'
+      log.date.strftime("%Y-%m-%d").should eq '2011-09-27'
+    end
+  end
+
+  context "#log_arr" do
+    it "splits up in ip & date" do
+      s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
+      RiecnewsLog.save(s)
+      RiecnewsLog.log_arr('top_page').should eq [["172.20.0.146","28/Sep/2011:14:06:01 +0900"]]
+    end
+  end
+
   describe "#top_page_logs_arr" do
     it "splits up in ip & date" do
       s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'

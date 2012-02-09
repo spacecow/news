@@ -1,10 +1,31 @@
 <div id="form">
   <div id="title"><%= t('message.comment_title') %></div>
 
-  <%= semantic_form_for @comment, :url => validate_comments_path,
-  :method => :post do |f| %>
-  <%= render 'form', :f => f, :button_label => t2(:send,:comment) %>
+  <%= form_tag validate_comments_path, :class => :formtastic do %>
+    <%= raw negative_captcha(@captcha) %>
+    <li>
+      <%= negative_label_tag(@captcha, :name, "#{ft(:name)}*") %>
+      <%= negative_text_field_tag @captcha, :name %>
+    </li>
+    <li>
+      <%= negative_label_tag(@captcha, :affiliation, ft(:affiliation)) %>
+      <%= negative_text_field_tag @captcha, :affiliation %>
+    </li>
+    <li>
+      <%= negative_label_tag(@captcha, :email, ft(:email)) %>
+      <%= negative_text_field_tag @captcha, :email %>
+    </li>
+    <li>
+      <%= negative_label_tag(@captcha, :content, "#{ft(:content)}*") %>
+      <%= negative_text_area_tag @captcha, :content %>
+    </li>
+    <%= submit_tag t2(:send,:comment), :class => :submit %>
   <% end %>
+
+  <%#= semantic_form_for @comment, :url => validate_comments_path,
+  :method => :post do |f| %>
+  <%#= render 'form', :f => f, :button_label => t2(:send,:comment) %>
+  <%# end %>
 
   <div id="bottom_links">
     <% if can? :index, @Comment %>

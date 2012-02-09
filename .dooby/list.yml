@@ -45,3 +45,5 @@ d09bce: !ruby/object:Dooby::Task
   todo: make log into an active object :done
 cb0a37: !ruby/object:Dooby::Task 
   todo: ApacheAccess -> Riecnews :done
+fb1770: !ruby/object:Dooby::Task 
+  todo: skipping formtastic form :doing

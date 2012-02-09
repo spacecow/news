@@ -5,8 +5,7 @@ class Log < ActiveRecord::Base
   
   class << self
     def load_date(s)
-      p s
-      Date.parse(s)
+      Date.parse(s.split(':')[0])
     end
   end
 end

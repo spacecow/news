@@ -9,10 +9,12 @@ gem 'cancan' #rails g cancan:ability
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "escape_utils"
 #gem "mocha", :group => :test
+gem 'negative-captcha', :git => 'https://github.com/stefants/negative-captcha.git'
 
 group :development do
   gem 'nifty-generators', :path => "~/ruby/rails/nifty-generators"
-  gem "rspec-rails" #rails g rspec:install
+  gem "rspec-rails", '2.7.0' #rails g rspec:install
+  gem 'guard-cucumber'
 end
 
 group :test do
