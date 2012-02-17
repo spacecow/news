@@ -5,7 +5,7 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-set :application, "sandbox"
+set :application, "riecnews"
 set :deploy_to, "/home/www/apps/#{application}"
 set :user, "jsveholm"
 set :admin_runner, "jsveholm"
