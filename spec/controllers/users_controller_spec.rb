@@ -12,7 +12,7 @@ describe UsersController do
 
   describe "a user is not logged in" do
     before(:each) do
-      @user = Factory(:user)
+      @user = FactoryGirl.create(:user)
     end
     
     users_controller_actions.each do |action,req|
@@ -32,8 +32,8 @@ describe UsersController do
 
   describe "a member is logged in" do
     before(:each) do
-      @own = Factory(:user, :roles_mask=>8)
-      @other = Factory(:user)
+      @own = FactoryGirl.create(:user, :roles_mask=>8)
+      @other = FactoryGirl.create(:user)
       session[:user_id] = @own.id
     end
     
@@ -63,8 +63,8 @@ describe UsersController do
 
   describe "a mini-admin is logged in" do
     before(:each) do
-      @own = Factory(:user, :roles_mask=>4)
-      @other = Factory(:user)
+      @own = FactoryGirl.create(:user, :roles_mask=>4)
+      @other = FactoryGirl.create(:user)
       session[:user_id] = @own.id
     end
     
@@ -85,8 +85,8 @@ describe UsersController do
 
   describe "an admin is logged in" do
     before(:each) do
-      @own = Factory(:user, :roles_mask=>2)
-      @other = Factory(:user)
+      @own = FactoryGirl.create(:user, :roles_mask=>2)
+      @other = FactoryGirl.create(:user)
       session[:user_id] = @own.id
     end
     
@@ -100,8 +100,8 @@ describe UsersController do
 
   describe "a god has come down to Earth" do
     before(:each) do
-      @own = Factory(:user, :roles_mask=>1)
-      @other = Factory(:user)
+      @own = FactoryGirl.create(:user, :roles_mask=>1)
+      @other = FactoryGirl.create(:user)
       session[:user_id] = @own.id
     end
     

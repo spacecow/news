@@ -4,6 +4,9 @@
   Top page hits: <%= @log.total_hits %>(<%= @log.unique_hits %>)<br>
   Pdf1 downloads: <%= @pdflog1.total_hits %>(<%= @pdflog1.unique_hits %>)<br>
   Pdf2 downloads: <%= @pdflog2.total_hits %>(<%= @pdflog2.unique_hits %>)
+  Pdf3 downloads: <%= @pdflog3.total_hits %>(<%= @pdflog3.unique_hits %>)
+  Pdf4 downloads: <%= @pdflog4.total_hits %>(<%= @pdflog4.unique_hits %>)
+  Pdf5 downloads: <%= @pdflog5.total_hits %>(<%= @pdflog5.unique_hits %>)
 </div>
 
 <%= form_tag logs_path, :method => :get do %>
@@ -17,5 +20,8 @@
     Top page hits: <%= @log.monthly_total_hits(key) %>(<%= @log.monthly_unique_hits(key) %>)<br>
     Pdf1 downloads: <%= @pdflog1.monthly_total_hits(key) %>(<%= @pdflog1.monthly_unique_hits(key) %>)<br>
     Pdf2 downloads: <%= @pdflog2.monthly_total_hits(key) %>(<%= @pdflog2.monthly_unique_hits(key) %>)
+    Pdf3 downloads: <%= @pdflog3.monthly_total_hits(key) %>(<%= @pdflog3.monthly_unique_hits(key) %>)
+    Pdf4 downloads: <%= @pdflog4.monthly_total_hits(key) %>(<%= @pdflog4.monthly_unique_hits(key) %>)
+    Pdf5 downloads: <%= @pdflog5.monthly_total_hits(key) %>(<%= @pdflog5.monthly_unique_hits(key) %>)
   </div>
 <% end %>
