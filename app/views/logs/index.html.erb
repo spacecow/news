@@ -3,10 +3,11 @@
 <div>
   Top page hits: <%= @log.total_hits %>(<%= @log.unique_hits %>)<br>
   Pdf1 downloads: <%= @pdflog1.total_hits %>(<%= @pdflog1.unique_hits %>)<br>
-  Pdf2 downloads: <%= @pdflog2.total_hits %>(<%= @pdflog2.unique_hits %>)
-  Pdf3 downloads: <%= @pdflog3.total_hits %>(<%= @pdflog3.unique_hits %>)
-  Pdf4 downloads: <%= @pdflog4.total_hits %>(<%= @pdflog4.unique_hits %>)
-  Pdf5 downloads: <%= @pdflog5.total_hits %>(<%= @pdflog5.unique_hits %>)
+  Pdf2 downloads: <%= @pdflog2.total_hits %>(<%= @pdflog2.unique_hits %>)<br>
+  Pdf3 downloads: <%= @pdflog3.total_hits %>(<%= @pdflog3.unique_hits %>)<br>
+  Pdf4 downloads: <%= @pdflog4.total_hits %>(<%= @pdflog4.unique_hits %>)<br>
+  Pdf5 downloads: <%= @pdflog5.total_hits %>(<%= @pdflog5.unique_hits %>)<br>
+  Pdf6 downloads: <%= @pdflog6.total_hits %>(<%= @pdflog6.unique_hits %>)
 </div>
 
 <%= form_tag logs_path, :method => :get do %>

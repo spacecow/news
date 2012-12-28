@@ -10,6 +10,8 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem "escape_utils"
 #gem "mocha", :group => :test
 gem 'negative-captcha', :git => 'https://github.com/stefants/negative-captcha.git'
+gem 'pry'
+#:path => '/home/staff/jsveholm/apps/negative-captcha' 
 
 group :development do
   #gem 'nifty-generators', :path => "~/ruby/rails/nifty-generators"

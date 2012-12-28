@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <script type="text/javascript" src="/navi.js"></script>
+    <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
+    <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+    <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
+    <![endif]-->
+    <%= stylesheet_link_tag "formtastic", "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+    <title><%= content_for?(:title) ? yield(:title) : "RIEC News" %></title>
+    <link rel="stylesheet" href="/css/setssi_2012.css" type="text/css" />
+  </head>
+  <body>
+    <noscript>JavaScriptを有効にしてご覧下さい。</noscript>
+    <div id="container">
+      <div id="header">
+        <p class="language">Japanese Only</p>
+
+        <%= raw insert_header("/header/index-j.html") %> 
+
+      </div>
+
+      <div id="mainmain">
+
+        <%= raw insert_menu("/navi2012/index-j_4.html") %>
+
+        <div id="riecnews">
+          <ul class="feeds">
+            <li><a href="/access/index-j.shtml">交通アクセス</a></li>
+            <li><a href="/sightmap/index-j.shtml">サイトマップ</a></li>
+            <li><a href="/new/index-j.shtml">更新情報</a></li>
+          </ul>
+          <!-- トップナビ終了-->
+          <ol class="path">
+            <li> <a href="../../index-j.shtml">ホーム</a></li>
+            <li> <a href="../../activity/perio/index-j.shtml">広報</a></li>
+            <li> RIEC News </li>
+          </ol>
+          <div class="honbun">
+            <h2>RIEC News</h2>
+            <% if !verify_page && !sent_page %>
+            <p class="markright">表紙写真をクリックして<img src="/image1/pdficon_small.gif" alt="" width="17" height="17" />をご覧ください．</p>
+
+            <h3>RIEC News 2011.11 No.3</h3>
+            <table>
+              <tr>
+                <td width="170"><a href="/riecnews/main/riecnews_no03.pdf" target="_blank"><img src="/riecnews/main/img/riecnews3.gif" alt="" width="150" height="214" class="videojpg"/></a></td>
+                <td>
+                  <h4>巻頭特集</h4>
+                  <ul>
+                  <li>次世代IT基盤技術：情報ストレージ<br />
+&nbsp;&nbsp;&nbsp;&nbsp;21世紀情報通信研究開発センター長　村岡　裕明</li></ul>
+                  <h4>研究室訪問</h4>
+                  <ul><li>ナノ分子デバイス（庭野・木村）研究室</li>
+                  <li>コミュニケーションネットワーク（木下）研究室</li></ul>
+                  <h4>TOPICS</h4>
+                  <ul><li>通研シンポジウム<br />
+&nbsp;&nbsp;&nbsp;&nbsp;「災害に強い情報通信ネットワークを考える」</li>
+                      <li>2011 親睦会ビアパーティ</li>
+                      <li>2011 通研研究交流会</li></ul>
+                  <h4>新研究室紹介</h4>
+                  <ul>
+                    <li>実世界コンピューティング（石黒）研究室</li></ul>
+                  <h4>RIEC豆知識(3)</h4>
+                  <ul><li>光のスケール(1)</li>
+                  </ul>
+                  <h4>通研国際シンポジウム一覧</h4>
+<h4>共同プロジェクトU（Urgent）</h4>
+<h4>教員人事異動について（平成22年度）</h4>
+                  <h4>EVENT Calendar</h4></td></tr>
+            </table>
+            <% end %>
+            </div>
+<!-- ここからコメント入力フォーム -->
+          <a name="unique"></a>
+          <div id="unique" class="<%= verify_page || sent_page ? "full" : "" %>">
+            <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            <% end %>
+            <div class="clear"></div>
+            <div id="top_navigation">
+              <div id="language_navigation">
+                <%= link_to current_language, toggle_language_path if current_user %>
+              </div>
+              <div id="user_navigation">
+                <% if current_user %>
+                <%= t('message.welcome',:user=>current_user.username) %>
+                <%= t('message.not_you?') %>
+                <%= link_to t(:log_out), logout_path %>
+                <% elsif false %>
+                <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
+                <% end %>
+            </div></div>
+            <div class="clear"></div>
+            <div id="main_content">
+              <%= content_tag :h1, yield(:title) if show_title? %>
+              <%= yield %>
+            </div>
+          </div>
+	  <!-- コメント入力フォーム終わり -->
+
+            <table>
+              <tr><td width="170"></td><td><a href=" https://ml.riec.tohoku.ac.jp/riecnews/">RIEC News 発行お知らせサービス</a>を開始しました．<br />
+どなたでもご登録いただけます．詳細は<a  href=" https://ml.riec.tohoku.ac.jp/riecnews/">こちら</a><br />&nbsp;</td></tr>
+
+<!-- RIEC News No.2 -->
+            <tr><td colspan="2"><h3>RIEC News 2011.7 No.2</h3></td></tr>
+            <tr><td width="170"><a href="/riecnews/main/riecnews_no02.pdf" target="_blank"><img src="/riecnews/main/img/riecnews2.gif" alt="" width="150" height="209" class="videojpg"/></a></td>
+                <td>
+                <h4>巻頭特集</h4>
+                    <ul>
+                    <li>震災からの創造的復興に向けて　所長　中沢　正隆</li>
+                    <li>備えあれば、憂いなし　-東日本大震災を体験して-　<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;副所長(安全衛生管理室長) 庭野　道夫</li>
+                    </ul>
+                <h4>研究室訪問</h4>
+                    <ul>
+                    <li>コンピューティング情報理論（外山・青戸）研究室</li>
+                    <li>ユビキタス通信システム（加藤・中瀬）研究室</li>
+                    </ul>
+                <h4>TOPICS</h4>
+                    <ul>
+                    <li>産学連携マッチングファンド</li>
+                    <li>RIEC Award創設について</li>
+                    </ul>
+                <h4>通研だより</h4>
+                    <ul><li>やわらかい情報システム研究センター</li></ul>
+                 <h4>RIEC豆知識(2)</h4>
+                    <ul>震災と携帯電話<br />&nbsp;&nbsp;&nbsp;&nbsp;「災害時に携帯電話がもっと使えたら・・・」</li>
+                    </ul>
+                <h4>平成23年度通研共同プロジェクト研究採択一覧</h4>
+                <h4>EVENT Calendar</h4>
+　　　　　　　 </td></tr>
+
+<!-- RIEC News No.1 -->
+            <tr><td colspan="2"><h3>RIEC News 2011.3 No.1 [創刊号]</h3></td></tr>
+            <tr><td width="170"><a href="/riecnews/main/riecnews_no01.pdf" target="_blank"><img src="/riecnews/main/img/riecnews_no1_150.jpg" alt="" width="150" height="211" class="videojpg"/></a></td>
+                <td>
+                <h4>巻頭言</h4>
+                    <ul><li>創刊によせて 所長 中沢 正隆</li></ul>
+                <h4>研究所紹介</h4>
+                <h4>TOPICS</h4>
+                    <ul>
+                    <li>仙台フォーラム2010</li>
+                    <li>共同プロジェクト研究発表会2010</li>
+                    <li>准教授分野の新設</li>
+                    <li>通研国際シンポジウム</li>
+                    <li>MIT-電子工学研究所との国際連携研究プログラムが東北大学重点戦略支援プログラムに採択</li>
+                    <li>独創的研究支援プログラム</li>
+                    </ul>
+                <h4>New Laboratory</h4>
+                    <ul >
+                    <li>先端ワイヤレス通信技術（末松）研究室</li>
+                    <li>情報コンテンツ（北村）研究室</li>
+                    </ul>
+                <h4>研究室訪問</h4>
+                    <ul>
+                    <li>ナノヘテロプロセス（室田・櫻庭）研究室</li>
+                    <li>知的ナノ集積システム（中島・佐藤）研究室</li>
+                    </ul>
+                <h4>通研だより</h4>
+                    <ul>
+                    <li>寄附研究部門の設立</li>
+                    <li>2010年通研研究交流会</li>
+                    <li>通研公開</li></ul>
+                 <h4>RIEC豆知識(1)</h4>
+                    <ul><li>「視覚情報は８０％？」</li></ul>
+                <h4>組織</h4>
+                <h4>表彰・受賞</h4>
+                </td></tr>
+            </table>
+        </div>
+      </div>
+      <!--　本文終わり　-->
+      <!--フッダー-->
+      <div id="footer">
+        <p>東北大学電気通信研究所</p>
+        <p>〒980-8577　仙台市青葉区片平2丁目1-1</p>
+        <p>TEL:022-217-5420 FAX:022-217-5426</p>
+
+        <p><img src="/image1/mail.jpg" alt="メール"  width="242" height="15" /></p>
+      </div>
+      <!-- フッダー終了-->
+      <!--footer-->
+    </div>
+  </body>
+</html>
+
+<script>
+  <% if @comment && !@comment.errors.empty? %>
+    window.location = window.location.href + "#unique";
+  <% end %>
+</script>

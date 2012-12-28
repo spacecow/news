@@ -27,7 +27,9 @@ class LogAnalyzer
   def unique_hits; logs.map(&:ip).uniq.count end
 
   class << self
-    def load(s=nil); %x[cat "#{path}" | grep "#{s}"].split("\n") end
+    def load(s=nil)
+      %x[cat "#{path}" | grep "#{s}"].split("\n")
+    end
     def log(cat,s=nil)
       logs = send("#{cat}_log_arr",s).map{|a| Log.new(:ip => a[0], :date => Log.load_date(a[1]), :category => cat)}
       ApacheAccessLog.new logs

@@ -1,6 +1,6 @@
 class Log < ActiveRecord::Base
   def month_abbr; date.strftime("%b") end
-  def month_no;   date.strftime("%m") end
+  def month_no;   date.strftime("%y%m") end
   def month_to_s; date.strftime("%B") end
   
   class << self
