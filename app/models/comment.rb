@@ -6,6 +6,8 @@ class Comment < ActiveRecord::Base
   validates_presence_of :content, :message => "#{I18n.t('errors.blank', :obj=>I18n.t('formtastic.labels.content'))}"
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i, :allow_blank => true, :message => "#{I18n.t('errors.invalid', :obj=>I18n.t('formtastic.labels.email'))}"
 
+  ATTRIBUTES = %w(name affiliation email content)
+
   def username
     return user.username if user
     I18n.t(:anonymous)

@@ -1,0 +1,9 @@
+<li class="string <%= errors.present? ? 'error' : '' %>">
+  <%= negative_label_tag(captcha, s, ft(s)) %>
+  <%= negative_text_field_tag(captcha, s) %>
+  <% if errors.present? %>
+    <p class="inline-errors">
+      <%= errors.join %>
+    </p>
+  <% end %>
+</li>

@@ -52,7 +52,7 @@ en:
   formtastic:
     labels:
       affiliation: "Affiliation"
-      content: "Content"
+      content: "Comment"
       email: "Email"
       name: "Name"
       password: "Password"

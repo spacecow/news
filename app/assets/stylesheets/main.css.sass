@@ -1,0 +1,50 @@
+#main_content
+  div.verify
+    $padding: 20px
+    border: 1px solid black
+    background: #eee
+    width: 550px - 2*$padding
+    padding: $padding 
+    font-size: 14px
+    .title
+      margin-left: 40px
+
+div.form
+  $padding: 20px
+  border: 1px solid black
+  background: #eee
+  $label_width: 100px
+  width: 450px - $padding - $label_width
+  padding: $padding $padding $padding $label_width 
+  li
+    width: 300px
+    &.string
+      input
+        width: 300px
+    &.error
+      background: pink
+      p.inline-errors
+        color: white
+        text-shadow: 1px 1px 1px black
+        font-size: 12px
+    label
+      float: left
+      width: $label_width - $padding + 10px 
+      margin-left: -$label_width
+      margin-top: 2px
+      text-align: right
+    input.submit
+      margin-top: 10px
+
+  table
+    margin: 10px 0 0 0 
+
+.title
+  font-size: 16px
+.label
+  font-weight: bold 
+.content
+  background: #ddd 
+
+input.list
+  margin: 10px 0 0 40px

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
   protect_from_forgery
   before_filter :set_language
-  helper_method :current_user, :english?, :notification
+  helper_method :english?
 
   def alert(act); t("alert.#{act}") end
   def created(s); success(:created,s) end

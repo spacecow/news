@@ -16,7 +16,7 @@ describe ApacheAccessLog do
       end
 
       it "month no" do
-        @log.month_no.should eq "08"
+        @log.month_no.should eq "1308"
       end
     end
   end

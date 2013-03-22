@@ -1,6 +1,7 @@
-<%= f.input :name %>
-<%= f.input :affiliation %>
-<%= f.input :email %>
-<%= f.input :content %>
-<div class="clear"></div>
-<%= f.submit button_label, :class => :submit %>
+<%= simple_form_for comment do |f| %>
+  <%= f.input :name, :as => :hidden %>
+  <%= f.input :email, :as => :hidden %>
+  <%= f.input :affiliation, :as => :hidden %>
+  <%= f.input :content, :as => :hidden %>
+  <%= f.submit t2(:send,:comment), :class => :list %>
+<% end %>

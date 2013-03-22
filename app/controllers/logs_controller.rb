@@ -18,7 +18,7 @@ class LogsController < ApplicationController
       @pdflog5.logs.each{|log| log.save} 
       @pdflog6.logs.each{|log| log.save} 
     else 
-      @log = RiecnewsLog.new Log.where(:category => "top_page")
+      @log = RiecnewsLog.new [Log.where(:category => "top_page").first]
       @pdflog1 = RiecnewsLog.new Log.where(:category => "pdf01")
       @pdflog2 = RiecnewsLog.new Log.where(:category => "pdf02")
       @pdflog3 = RiecnewsLog.new Log.where(:category => "pdf03")

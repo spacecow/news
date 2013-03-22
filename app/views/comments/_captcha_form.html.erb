@@ -1,0 +1,26 @@
+<% present comment do |presenter| %>
+
+<%= presenter.title t('message.comment_title') %>
+
+<%= form_tag validate_comments_path, id: :new_comment do %>
+  <%= raw negative_captcha(captcha) %>
+  <%= presenter.form_field :name, captcha %>
+  <%= presenter.form_field :affiliation, captcha %>
+  <%= presenter.form_field :email, captcha %>
+  <%= presenter.form_field :content, captcha %>
+  <%= submit_tag t2(:send,:comment), class: :submit %>
+
+  <div align="center">
+    <table>
+      <tr>
+        <td>
+          <a href=" https://ml.riec.tohoku.ac.jp/riecnews/">RIEC News 発行お知らせサービス</a>を開始しました．<br />
+          どなたでもご登録いただけます．詳細は<a  href=" https://ml.riec.tohoku.ac.jp/riecnews/">こちら</a><br />&nbsp;
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<% end %>
+
+<% end %>

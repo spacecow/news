@@ -1,12 +1,36 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe RiecnewsLog do
+  describe ".save_and_log_yesterdays_snapshot" do
+    before do
+      Date.should_receive(:yesterday).and_return Date.parse('2011-09-28')
+      RiecnewsLog.save_and_log_yesterdays_snapshot
+    end
+
+    context Log do
+      subject{ Log }
+      its(:count){ should be 4 } 
+    end
+  end
+
+  describe ".save_and_log_snapshot" do
+    before do
+      RiecnewsLog.save_and_log_snapshot
+    end
+
+    context Log do
+      subject{ Log }
+      its(:count){ should be 5 } 
+    end
+  end
+
   describe "#pdf_log_raw" do
     before(:each) do
       s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no01.pdf HTTP/1.1" 200 '
       s += "\n"
       s += '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no02.pdf HTTP/1.1" 206 '
-      RiecnewsLog.save(s)
+      LogAnalyzer.should_receive(:load_access_log).and_return s 
+      RiecnewsLog.save_snapshot
     end
 
     it "collects the pdf with the right title" do
@@ -21,7 +45,8 @@ describe RiecnewsLog do
   context "#log" do
     it "" do
       s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
-      RiecnewsLog.save(s)
+      LogAnalyzer.should_receive(:load_access_log).and_return s 
+      RiecnewsLog.save_snapshot
       log = RiecnewsLog.log('top_page').logs.first
       log.ip.should eq '172.20.0.146'
       log.date.strftime("%Y-%m-%d").should eq '2011-09-27'
@@ -31,7 +56,8 @@ describe RiecnewsLog do
   context "#log_arr" do
     it "splits up in ip & date" do
       s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
-      RiecnewsLog.save(s)
+      LogAnalyzer.should_receive(:load_access_log).and_return s 
+      RiecnewsLog.save_snapshot
       RiecnewsLog.log_arr('top_page').should eq [["172.20.0.146","28/Sep/2011:14:06:01 +0900"]]
     end
   end
@@ -39,7 +65,8 @@ describe RiecnewsLog do
   describe "#top_page_logs_arr" do
     it "splits up in ip & date" do
       s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
-      RiecnewsLog.save(s)
+      LogAnalyzer.should_receive(:load_access_log).and_return s 
+      RiecnewsLog.save_snapshot
       RiecnewsLog.top_page_log_arr.should eq [["172.20.0.146","28/Sep/2011:14:06:01 +0900"]]
     end
 
@@ -47,7 +74,8 @@ describe RiecnewsLog do
       s = '172.20.0.146 - - [28/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
       s += "\n"
       s += '172.20.0.146 - - [20/Sep/2011:14:06:01 +0900] "GET /riecnews HTTP/1.1" 304'
-      RiecnewsLog.save(s)
+      LogAnalyzer.should_receive(:load_access_log).and_return s 
+      RiecnewsLog.save_snapshot
       RiecnewsLog.top_page_log_arr.should eq [["172.20.0.146","28/Sep/2011:14:06:01 +0900"],["172.20.0.146","20/Sep/2011:14:06:01 +0900"]]
     end
   end
@@ -67,7 +95,8 @@ describe RiecnewsLog do
       end
 
       after(:each) do
-        RiecnewsLog.save(@s)
+        LogAnalyzer.should_receive(:load_access_log).and_return @s 
+        RiecnewsLog.save_snapshot
         RiecnewsLog.top_page_log_raw.count.should eq 1
       end
     end

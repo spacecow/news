@@ -1,35 +1,35 @@
 source 'http://rubygems.org'
 
 gem 'annotate'
-gem 'rails', '3.0.5'
-gem 'mysql2', '0.2.6'
-gem 'formtastic' #rails g formtastic:install
-gem 'compass', '0.11.beta.7' #compass init rails /path/to/myrailsproject --using blueprint/semantic
+gem 'rails', '3.2.12'
+gem 'mysql2'
 gem 'cancan' #rails g cancan:ability
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "escape_utils"
-#gem "mocha", :group => :test
 gem 'negative-captcha', :git => 'https://github.com/stefants/negative-captcha.git'
 gem 'pry'
-#:path => '/home/staff/jsveholm/apps/negative-captcha' 
+gem 'jquery-rails'
+gem 'simple_form'
+
+group :assets do
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+end
+
 
 group :development do
-  #gem 'nifty-generators', :path => "~/ruby/rails/nifty-generators"
-  gem "rspec-rails", '2.7.0' #rails g rspec:install
-  gem 'guard-cucumber'
+  gem "rspec-rails" #rails g rspec:install
+  gem 'guard-spork'
 end
 
 group :test do
-  gem 'spork', '> 0.9.0.rc'
+  gem 'rb-inotify', '~> 0.9'
+  gem 'spork-rails'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'cucumber', '1.1.0'
-  gem 'cucumber-rails', '1.0.6' #rails g cucumber:install --capybara --rspec
   gem 'capybara'
-  gem 'database_cleaner'
-  gem 'pickle' #rails g pickle --paths --email
   gem 'launchy'
   gem 'factory_girl_rails'
-  gem 'gherkin'
 end

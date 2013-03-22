@@ -24,11 +24,11 @@ describe LogAnalyzer do
     end
 
     it "counts total hits for one month" do
-      @log.monthly_total_hits("08").should be(2)
+      @log.monthly_total_hits("1308").should be(2)
     end
 
     it "counts unique hits for one month" do
-      @log.monthly_unique_hits("09").should be(1)
+      @log.monthly_unique_hits("1309").should be(1)
     end
   end
 end

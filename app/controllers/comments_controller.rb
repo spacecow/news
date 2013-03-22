@@ -17,21 +17,22 @@ class CommentsController < ApplicationController
     @comment.affiliation = current_user_affiliation
   end
 
+  def verify
+    @comment = Comment.new(params[:comment])    
+  end
+  
   def validate
     load_captcha_comment_depending_on_user
-    if @captcha.valid? && @comment.valid?
-      redirect_to verify_comments_path(:comment => @captcha.values)
+    if @comment.valid? && @captcha.valid?
+      redirect_to verify_comments_path(comment:@captcha.values)
     else
       #flash[:notice] = @captcha.error if @captcha.error
       render :action => 'new'
     end
   end
 
-  def verify
-    @comment = Comment.new(params[:comment])    
-  end
-  
   def create
+    p params
     load_comment_depending_on_user
     if @comment.save
       CommentMailer.comment_confirmation(@comment).deliver

@@ -9,3 +9,8 @@ public/img
 app/views/layouts/application.html.erb
 *.swp
 *.swo
+.sass-cache/
+public/share
+public/css_2012
+public/archive
+data/
