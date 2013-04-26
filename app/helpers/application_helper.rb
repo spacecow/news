@@ -1,6 +1,6 @@
 module ApplicationHelper
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
-  def create(s); t2(:create,s) end
+  #def create(s); t2(:create,s) end
   def current_language; english? ? t(:japanese) : t(:english) end
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

@@ -1,4 +1,9 @@
 class Log < ActiveRecord::Base
+  belongs_to :category
+
+  validates :ip, presence:true
+  validates :category, presence:true
+
   def month_abbr; date.strftime("%b") end
   def month_no;   date.strftime("%y%m") end
   def month_to_s; date.strftime("%B") end

@@ -1,5 +1,17 @@
+<% present Log do |presenter| %>
+
 <h1>Access Log</h1>
 
+<%= content_tag :div, "", id:'months_chart', data:{months:months_chart_data} %>
+
+<%= presenter.months @months %>
+
+<% end %>
+
+
+
+
+<% if false %>
 <div>
   Top page hits: <%= @log.total_hits %>(<%= @log.unique_hits %>)<br>
   Pdf1 downloads: <%= @pdflog1.total_hits %>(<%= @pdflog1.unique_hits %>)<br>
@@ -25,4 +37,5 @@
     Pdf4 downloads: <%= @pdflog4.monthly_total_hits(key) %>(<%= @pdflog4.monthly_unique_hits(key) %>)
     Pdf5 downloads: <%= @pdflog5.monthly_total_hits(key) %>(<%= @pdflog5.monthly_unique_hits(key) %>)
   </div>
+<% end %>
 <% end %>
