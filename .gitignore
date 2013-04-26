@@ -2,7 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/
-config/database.yml
+config/database*
 public/css
 public/image1
 public/img
@@ -14,4 +14,3 @@ public/share
 public/css_2012
 public/archive
 data/
-config/database_mysql.yml
