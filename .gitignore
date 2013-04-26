@@ -14,3 +14,4 @@ public/share
 public/css_2012
 public/archive
 data/
+config/database_mysql.yml
