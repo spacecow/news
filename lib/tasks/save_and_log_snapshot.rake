@@ -1,4 +1,24 @@
 namespace :riec do
+  desc "Save a map of symlinks"
+  task :save_symlinks_map => :environment do
+    Johan::File.save_symlinks_map
+  end
+
+  desc "Replace symlinks with their actual files"
+  task :replace_symlinks => :environment do
+    Johan::File.replace_symlinks
+  end
+
+  desc "Unlink symlinks and save to map file"
+  task :pre_deploy => :environment do
+    Johan::File.pre_deploy
+  end
+
+  desc "Link up symlinks again from map file"
+  task :post_deploy => :environment do
+    Johan::File.post_deploy
+  end
+
   desc "Populate the riecnews access log"
   task :populate_access_log => :environment do
     Analyzer.populate_riecnews_access_log

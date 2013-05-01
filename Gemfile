@@ -19,17 +19,17 @@ group :assets do
 end
 
 
-group :development do
-  gem "rspec-rails" #rails g rspec:install
-  gem 'guard-spork'
-end
-
-group :test do
-  gem 'rb-inotify', '~> 0.9'
-  gem 'spork-rails'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'factory_girl_rails'
-end
+#group :development do
+#  gem "rspec-rails" #rails g rspec:install
+#  gem 'guard-spork'
+#end
+#
+#group :test do
+#  gem 'rb-inotify', '~> 0.9'
+#  gem 'spork-rails'
+#  gem 'guard'
+#  gem 'guard-rspec'
+#  gem 'capybara'
+#  gem 'launchy'
+#  gem 'factory_girl_rails'
+#end
