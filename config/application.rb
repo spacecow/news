@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require File.expand_path('../../lib/assert', __FILE__)
+
+$AVLUSA = 1
 
 # Rails 3.0
 #Bundler.require(:default, Rails.env) if defined?(Bundler) 
@@ -18,6 +21,8 @@ module Riecnews
 
     # Version of your assets, change this if you want it to expire all your assets
     config.assets.version = '1.0'
+
+    #config.assets.prefix = '/riecnews/assets'
 
     config.autoload_paths << "#{config.root}/lib"    # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

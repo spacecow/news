@@ -11,7 +11,7 @@ describe Johan::Date do
 
   describe ".tag" do
     it "tags with todays date by default" do
-      Date.should_receive(:today).twice.and_return Date.parse('2013-03-18')
+      Date.should_receive(:today).once.and_return Date.parse('2013-03-18')
       Johan::Date.tag('string').should eq 'string_130318'
     end
 
