@@ -55,6 +55,8 @@ Riecnews::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  config.assets.prefix = '/riecnews/assets'
 end
 
 ActionMailer::Base.smtp_settings = {

@@ -1,4 +1,5 @@
 require 'assert'
+require 'resolv'
 
 class Analyzer
   PDF_SEARCH = ["GET /riecnews/main/#pdf.pdf HTTP", "GET /archive/publication/riecnewspdf/#pdf.pdf HTTP", "/activity/publication/riecnewspdf/#pdf.pdf"]
@@ -26,10 +27,10 @@ class Analyzer
     end
       
     def riecnews_log_path
-      "data/riecnews_log"
+      "data/riecnews_access_log"
     end
     def access_log_path 
-      "/usr/local/apache2/logs/www/access_log"
+      "/home/www/logs/riecnews_access_log"
     end
   
     def beginning_of_this_month
@@ -46,10 +47,27 @@ class Analyzer
       end
     end
 
-    def create_logs log
+    def create_logs log, skip={}
+      p "before"
+      p skip
       init_count = Log.count
-      log.split("\n").each do |line|
+      log.split("\n").each_with_index do |line,i|
         ip, date, path = line.match(/^(.*) - - \[(.*?)\] "\w+ (.*) HTTP/).captures
+
+        p "#{i}: #{ip} #{skip[ip]}"
+        if skip[ip].nil?
+          begin
+            skip[ip] = false
+            if Resolv.getname(ip) =~ /crawl|google|yahoo/
+              skip[ip] = true
+              next
+            end
+          rescue Resolv::ResolvError
+          end
+        else
+          next if skip[ip]
+        end
+
         if(category = category path)
           date = Log.parse_date(date)
           month = Month.find_or_create_by_name file_month_format(date)
@@ -57,7 +75,9 @@ class Analyzer
           Category.find_or_create_by_name_and_month_id(category, month.id).logs << log
         end
       end
-      p "Logs created: #{Log.count - init_count}"
+      puts "Logs created: #{Log.count - init_count}"
+      p "after"
+      p skip
     end
 
     def delete_logs month
@@ -87,9 +107,9 @@ class Analyzer
       p "Creates file: #{path}"
       begin
         outfile = File.open(path, 'w')
-        File.open(access_log_path, 'r').each do |line|
+        File.open(access_log_path, 'r').each do |line,i|
           line =~ /^.* - - \[.*\] "(?:GET|HEAD|POST|OPTIONS) (.*) HTTP/
-          assert_not_nil $1
+          #assert_not_nil $1
           outfile.write(line) if line =~ /riecnews/ if line =~ / 200 /
         end
       ensure
@@ -105,12 +125,13 @@ class Analyzer
     end
 
     def save_snapshot
+      skip = {}
       month_intervals.each do |month|
-        save_snapshot_by_month file_month_format(month)
+        save_snapshot_by_month file_month_format(month), skip
       end
     end
 
-    def save_snapshot_by_month month
+    def save_snapshot_by_month month, skip={}
       assert_match month, /^\d{4}$/
       date = access_log_month_format Date.parse("#{month}01")
       path = riecnews_log_path
@@ -119,7 +140,7 @@ class Analyzer
       save_riecnews_access_log log, outfile
       #Month.find_by_name(month).categories.delete_all
       delete_logs month
-      create_logs log
+      create_logs log, skip
     end
 
     def save_yesterdays_snapshot

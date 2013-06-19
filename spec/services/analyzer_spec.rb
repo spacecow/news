@@ -154,6 +154,7 @@ describe Analyzer do
   describe ".create_logs" do
     let(:create_log){ lambda{ Analyzer.create_logs mar11 }}
     let(:nonriec){ '172.20.0.146 - - [28/Mar/2011:14:06:01 +0900] "GET /fakenews/main/fakenews_no01.pdf HTTP/1.1" 200 ...'+"\n" }
+
     context "create log" do
       before{ create_log.call }
   
@@ -167,6 +168,30 @@ describe Analyzer do
       context "last log" do
         subject{ Log.last }
         its(:category_id){ should be Category.last.id }
+      end
+    end
+
+    context "hostname contains crawl," do
+      hash = {}
+      crawl = '66.249.74.89 - - [28/Mar/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no01.pdf HTTP/1.1" 200 ...'+"\n"
+      
+      it "log is not created" do
+        expect{ Analyzer.create_logs crawl,hash }.to change(Log,:count).by(0)
+      end
+      it "hash in element is set to true" do
+        hash.should eq({'66.249.74.89'=>true})
+      end
+    end
+
+    context "name does not exits" do
+      hash = {}
+      noname = '172.20.24.3 - - [28/Mar/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no01.pdf HTTP/1.1" 200 ...'+"\n"
+
+      it "log is created" do
+        expect{ Analyzer.create_logs noname,hash }.to change(Log,:count).by(1)
+      end
+      it "hash in element is set to true" do
+        hash.should eq({'172.20.24.3'=>false})
       end
     end
 
@@ -253,7 +278,7 @@ describe Analyzer do
   describe ".save_snapshot", save_file:true do
     before do
       Analyzer.should_receive(:month_intervals).and_return [Date.parse('2011-03-01')]
-      Analyzer.should_receive(:save_snapshot_by_month).with('1103')
+      Analyzer.should_receive(:save_snapshot_by_month).with('1103', {})
       Analyzer.save_snapshot
     end
     it "should work" do end
