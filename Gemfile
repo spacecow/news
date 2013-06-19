@@ -11,6 +11,7 @@ gem 'pry'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'unicorn'
+gem 'rb-readline'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
