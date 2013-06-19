@@ -1,6 +1,10 @@
 require "bundler/capistrano"
 
-role "jasper.dmz.riec.tohoku.ac.jp", :web, :app, :db, primary:true
+set :default_environment, {
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
+
+server "jasper.dmz.riec.tohoku.ac.jp", :web, :app, :db, primary:true
 
 set :application, "riecnews"
 set :user, "firdep"
