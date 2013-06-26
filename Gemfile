@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'unicorn'
 gem 'rb-readline', '~> 0.4.2'
+gem 'whenever', require:false
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

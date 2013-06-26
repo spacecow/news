@@ -1,5 +1,8 @@
 require "bundler/capistrano"
 
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 set :default_environment, {
   'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
@@ -57,6 +60,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/main #{release_path}/public/main" 
     run "ln -nfs #{shared_path}/main/index.html #{release_path}/app/views/layouts/application.html.erb"
     run "ln -nfs #{shared_path}/main/img #{release_path}/public/img"
+    run "mkdir -p #{release_path}/data"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 

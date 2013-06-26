@@ -172,29 +172,58 @@ describe Analyzer do
     end
 
     context "hostname contains crawl," do
-      hash = {}
       crawl = '66.249.74.89 - - [28/Mar/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no01.pdf HTTP/1.1" 200 ...'+"\n"
       
-      it "log is not created" do
-        expect{ Analyzer.create_logs crawl,hash }.to change(Log,:count).by(0)
+      it "log is not created the first time" do
+        expect{ Analyzer.create_logs crawl,{} }.to change(Log,:count).by(0)
       end
       it "hash in element is set to true" do
-        hash.should eq({'66.249.74.89'=>true})
+        hash = {}
+        Analyzer.create_logs crawl,hash
+        hash.should eq({'66.249.74.89'=>false})
+      end
+      it "log is not created the second time" do
+        hash = {}
+        Analyzer.create_logs crawl,hash
+        expect{ Analyzer.create_logs crawl,hash }.to change(Log,:count).by(0)
       end
     end
 
     context "name does not exits" do
-      hash = {}
       noname = '172.20.24.3 - - [28/Mar/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no01.pdf HTTP/1.1" 200 ...'+"\n"
+
+      it "log is created the first time" do
+        expect{ Analyzer.create_logs noname,{} }.to change(Log,:count).by(1)
+      end
+      it "hash in element is initialized to 1" do
+        hash = {}
+        Analyzer.create_logs noname,hash
+        hash.should eq({'172.20.24.3'=>1})
+      end
+      it "log is created the second time" do
+        hash = {}
+        Analyzer.create_logs noname,hash
+        expect{ Analyzer.create_logs noname,hash }.to change(Log,:count).by(1)
+      end
+      it "hash in element is increased the second time" do
+        hash = {}
+        Analyzer.create_logs noname,hash
+        Analyzer.create_logs noname,hash
+        hash.should eq({'172.20.24.3'=>2})
+      end
+    end
+
+    context "name does exits" do
+      hash = {}
+      noname = '180.16.97.111 - - [28/Mar/2011:14:06:01 +0900] "GET /riecnews/main/riecnews_no01.pdf HTTP/1.1" 200 ...'+"\n"
 
       it "log is created" do
         expect{ Analyzer.create_logs noname,hash }.to change(Log,:count).by(1)
       end
       it "hash in element is set to true" do
-        hash.should eq({'172.20.24.3'=>false})
+        hash.should eq({'180.16.97.111'=>1})
       end
     end
-
     context "create log where ip is already taken" do
       let(:month){ create :month, name:'1103' }
       let(:category){ create :category, name:'pdf01', month:month }
@@ -288,7 +317,7 @@ describe Analyzer do
     let(:outfile){ "#{riecnews_log}_110528" }
     before do
       Analyzer.should_receive(:yesterday).and_return Date.parse '2011-05-28'
-      Analyzer.should_receive(:load_riecnews_access_log).with("28/May/2011").and_return may11
+      Analyzer.should_receive(:load_access_log).with("28/May/2011").and_return may11
       Analyzer.should_receive(:riecnews_log_path).and_return riecnews_log
       Analyzer.should_receive(:save_riecnews_access_log).with(may11, outfile)
       Analyzer.save_yesterdays_snapshot

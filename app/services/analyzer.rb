@@ -48,24 +48,25 @@ class Analyzer
     end
 
     def create_logs log, skip={}
-      p "before"
-      p skip
       init_count = Log.count
       log.split("\n").each_with_index do |line,i|
         ip, date, path = line.match(/^(.*) - - \[(.*?)\] "\w+ (.*) HTTP/).captures
 
-        p "#{i}: #{ip} #{skip[ip]}"
         if skip[ip].nil?
           begin
-            skip[ip] = false
+            skip[ip] = 0
             if Resolv.getname(ip) =~ /crawl|google|yahoo/
-              skip[ip] = true
+              skip[ip] = false
               next
+            else
+              skip[ip] = 1
             end
           rescue Resolv::ResolvError
+            skip[ip] = 1
           end
         else
-          next if skip[ip]
+          next if skip[ip] == false
+          skip[ip] += 1 
         end
 
         if(category = category path)
@@ -76,8 +77,6 @@ class Analyzer
         end
       end
       puts "Logs created: #{Log.count - init_count}"
-      p "after"
-      p skip
     end
 
     def delete_logs month
@@ -91,6 +90,14 @@ class Analyzer
       date = access_log_date_format(date) if date.instance_of? Date
       assert_match(date, /^$|^(\d+\/)?\w{3}\/\d{4}$/)
       path = riecnews_log_path
+      p "Load file: #{path} | grep #{date}"
+      %x[cat "#{path}" | grep "#{date}"]
+    end
+
+    def load_access_log date
+      date = access_log_date_format(date) if date.instance_of? Date
+      assert_match(date, /^$|^(\d+\/)?\w{3}\/\d{4}$/)
+      path = access_log_path
       p "Load file: #{path} | grep #{date}"
       %x[cat "#{path}" | grep "#{date}"]
     end
@@ -145,7 +152,7 @@ class Analyzer
 
     def save_yesterdays_snapshot
       _yesterday = yesterday
-      log = load_riecnews_access_log access_log_date_format(_yesterday)
+      log = load_access_log access_log_date_format(_yesterday)
       outfile = "#{riecnews_log_path}_#{file_date_format _yesterday}"
       save_riecnews_access_log log, outfile
       create_logs log

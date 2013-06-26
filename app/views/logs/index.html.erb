@@ -1,8 +1,12 @@
 <% present Log do |presenter| %>
 
-<h1>Access Log</h1>
+<h2>Access Log</h2>
 
-<%= content_tag :div, "", id:'months_chart', data:{months:months_chart_data} %>
+ Download:
+  <%= link_to "CSV", logs_path(format: "csv") %>
+
+<%= content_tag :div, "", class:'chart', id:'total_chart', data:{months:total_chart_data} %>
+<%= content_tag :div, "", class:'chart', id:'pdf_chart', data:{months:pdf_chart_data, pdfs:Category.all.map(&:name).uniq.sort.select{|e| e =~ /pdf/}} %>
 
 <%= presenter.months @months %>
 
